@@ -11,4 +11,5 @@ $gutter: 32px;
 .home-container {
     max-width: $container-width + $gutter * 2;
     padding: 0 $gutter;
+    box-sizing: border-box;
 }
