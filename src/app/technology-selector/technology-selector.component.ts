@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { JobService } from '../job.service';
+import { JobService, Skill } from '../job.service';
 
 @Component({
   selector: 'app-technology-selector',
@@ -7,9 +7,26 @@ import { JobService } from '../job.service';
   styleUrls: ['./technology-selector.component.scss']
 })
 export class TechnologySelectorComponent {
-  types: string[] = [];
 
-  constructor(private jobService: JobService) {
-    this.types = jobService.types;
+  constructor(private jobService: JobService) { }
+
+  get chips() {
+    return this.skills.map(skill => ({
+      id: skill.id,
+      value: skill.name,
+      selected: this.selectedTypes.has(skill.id) ? true : false,
+    }));
+  }
+
+  get selectedTypes() {
+    return this.jobService.getSelectedTypes();
+  }
+
+  get skills() {
+    return this.jobService.getSkills();
+  }
+
+  onClickSkill(skillId: string) {
+    this.jobService.selectType(skillId);
   }
 }

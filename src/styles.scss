@@ -1,3 +1,19 @@
+:root {
+    --gutter: 32px;
+}
+
+@media only screen and (max-width: 767px) {
+    :root {
+        --gutter: 16px
+    }
+}
+
+@media(max-height: 414px)and (min-width:812px)and (orientation:landscape) {
+    :root {
+        --gutter: 50px
+    }
+}
+
 @font-face {
     font-family: Gordita;
     src: url(./assets/fonts/GorditaRegular.woff2) format("woff2"), url(./assets/fonts/GorditaRegular.woff) format("woff"), url(./assets/fonts/GorditaRegular.ttf) format("truetype");
@@ -34,4 +50,18 @@ html {
     height: 110%;
     width: 100%;
     box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 8px
+}
+
+::-webkit-scrollbar-track {
+    background-color: hsla(0, 0%, 87%, .75);
+    border-radius: 10px
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #aaa
 }

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ChipItemComponent } from './chip-item/chip-item.component';
 import { ChipSelectorComponent } from './chip-selector/chip-selector.component';
 import { TechnologySelectorComponent } from './technology-selector/technology-selector.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TechnologySelectorComponent } from './technology-selector/technology-se
     TechnologySelectorComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

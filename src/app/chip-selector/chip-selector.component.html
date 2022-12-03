@@ -1,3 +1,5 @@
 <div class="chip-selector">
-    <app-chip-item *ngFor="let type of types" [type]="type"></app-chip-item>
+    <app-chip-item *ngFor="let chip of chips; trackBy: trackById" [text]="chip.value" [selected]="chip.selected"
+        (click)="onClick(chip.id)">
+    </app-chip-item>
 </div>

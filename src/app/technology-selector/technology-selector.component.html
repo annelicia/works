@@ -1,4 +1,4 @@
 <div class="technology-header">Technologies</div>
 <div class="chip-selector-container">
-    <app-chip-selector [types]="types"></app-chip-selector>
+    <app-chip-selector [chips]="chips" (selectChip)="onClickSkill($event)"></app-chip-selector>
 </div>
