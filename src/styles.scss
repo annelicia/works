@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Gordita;
+    src: url(./assets/fonts/GorditaRegular.woff2) format("woff2"), url(./assets/fonts/GorditaRegular.woff) format("woff"), url(./assets/fonts/GorditaRegular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Gordita;
+    src: url(./assets/fonts/GorditaMedium.woff2) format("woff2"), url(./assets/fonts/GorditaMedium.woff) format("woff"), url(./assets/fonts/GorditaMedium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Gordita;
+    src: url(./assets/fonts/GorditaRegular-Italic.woff2) format("woff2"), url(./assets/fonts/GorditaRegular-Italic.woff) format("woff"), url(./assets/fonts/GorditaRegular-Italic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap
+}
+
+html {
+    font-family: Gordita;
+    font-size: 10px;
+    background-color: rgb(250, 250, 250);
+}
