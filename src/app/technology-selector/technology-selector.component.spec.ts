@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ChipItemComponent } from '../chip-item/chip-item.component';
+import { ChipSelectorComponent } from '../chip-selector/chip-selector.component';
 
 import { TechnologySelectorComponent } from './technology-selector.component';
 
@@ -8,9 +10,13 @@ describe('TechnologySelectorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TechnologySelectorComponent ]
+      declarations: [
+        TechnologySelectorComponent,
+        ChipSelectorComponent,
+        ChipItemComponent,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TechnologySelectorComponent);
     component = fixture.componentInstance;

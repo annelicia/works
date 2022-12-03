@@ -1,11 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ChipItemComponent } from './chip-item/chip-item.component';
+import { ChipSelectorComponent } from './chip-selector/chip-selector.component';
+import { TechnologySelectorComponent } from './technology-selector/technology-selector.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        TechnologySelectorComponent,
+        ChipSelectorComponent,
+        ChipItemComponent,
       ],
     }).compileComponents();
   });
@@ -22,10 +28,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('works-app');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('works-app app is running!');
-  });
 });
