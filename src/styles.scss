@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 @font-face {
     font-family: Gordita;
     src: url(./assets/fonts/GorditaRegular.woff2) format("woff2"), url(./assets/fonts/GorditaRegular.woff) format("woff"), url(./assets/fonts/GorditaRegular.ttf) format("truetype");
@@ -27,4 +26,11 @@ html {
     font-family: Gordita;
     font-size: 10px;
     background-color: rgb(250, 250, 250);
+}
+
+body,
+html {
+    margin: 0;
+    height: 110%;
+    width: 100%;
 }

@@ -1,5 +1,14 @@
-.home-container {
+$container-width: 1208px;
+$gutter: 32px;
+
+.layout {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 8rem 0;
+}
+
+.home-container {
+    max-width: $container-width + $gutter * 2;
+    padding: 0 $gutter;
 }
