@@ -1,5 +1,7 @@
-<div class="job-item-container" *ngFor="let job of jobListFiltered">
-    <app-job-item class="job-item" [job]="job" [selected]="job.jobId === selectedJobId"
-        (select)="select.emit(job.jobId)">
-    </app-job-item>
+<div class="job-list-container">
+    <div class="job-item-container" *ngFor="let job of jobListFiltered">
+        <app-job-item class="job-item" [job]="job" [selected]="job.jobId === selectedJobId"
+            (select)="select.emit(job.jobId)">
+        </app-job-item>
+    </div>
 </div>
