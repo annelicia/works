@@ -31,3 +31,13 @@ $container-width: 1208px;
     display: flex;
     gap: 10px;
 }
+
+.mobile-footer {
+    display: none;
+}
+
+@media(max-width: 1024px) {
+    .mobile-footer {
+        display: initial;
+    }
+}

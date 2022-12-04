@@ -17,6 +17,7 @@ import { StepComponent } from './common/components/step/step.component';
 import { JobDetailDescriptionComponent } from './job/job-detail/job-detail-description/job-detail-description.component';
 import { JobDetailFooterComponent } from './job/job-detail/job-detail-footer/job-detail-footer.component';
 import { JobDetailHeaderComponent } from './job/job-detail/job-detail-header/job-detail-header.component';
+import { MobileFooterComponent } from './mobile-footer/mobile-footer.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { JobDetailHeaderComponent } from './job/job-detail/job-detail-header/job
     JobDetailFooterComponent,
     StepComponent,
     JobDetailDescriptionComponent,
+    MobileFooterComponent,
   ],
   imports: [
     BrowserModule,

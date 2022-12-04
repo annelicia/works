@@ -7,6 +7,13 @@
     position: relative;
 }
 
+@media(max-width: 1024px) {
+    .app-job-list {
+        overflow: initial;
+        max-height: none;
+    }
+}
+
 @media(min-width: 1024px) {
     .app-job-list {
         flex-basis: 30%;
