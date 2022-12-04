@@ -72,3 +72,13 @@
 .apply-button-footer {
     margin-top: 40px;
 }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sub-title {
+    line-height: 24px;
+}

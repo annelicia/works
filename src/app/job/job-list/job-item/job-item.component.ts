@@ -16,7 +16,6 @@ export class JobItemComponent {
     return this.job.requiredSkills.concat(this.job.optionalSkills).map(({ name }) => name).slice(0, 3);
   }
 
-  // TODO: implement func.
   getString(num: number | null) {
     if (!num) return "0";
     if (num <= 10) {
@@ -32,7 +31,6 @@ export class JobItemComponent {
     }
   }
 
-  // TODO: implement func.
   getStringDateDistance(stringDate: string) {
     const distance = formatDistance(new Date(stringDate), new Date());
     if (distance.includes('days')) {
