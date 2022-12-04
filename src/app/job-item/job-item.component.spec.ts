@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IconLabelComponent } from '../icon-label/icon-label.component';
 
 import { JobItemComponent } from './job-item.component';
 
@@ -8,9 +9,12 @@ describe('JobItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JobItemComponent ]
+      declarations: [
+        JobItemComponent,
+        IconLabelComponent,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(JobItemComponent);
     component = fixture.componentInstance;

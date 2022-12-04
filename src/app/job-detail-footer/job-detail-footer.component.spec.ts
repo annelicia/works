@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ApplyButtonComponent } from '../apply-button/apply-button.component';
+import { StepComponent } from '../step/step.component';
 
 import { JobDetailFooterComponent } from './job-detail-footer.component';
 
@@ -8,9 +10,13 @@ describe('JobDetailFooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JobDetailFooterComponent ]
+      declarations: [
+        JobDetailFooterComponent,
+        ApplyButtonComponent,
+        StepComponent,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(JobDetailFooterComponent);
     component = fixture.componentInstance;

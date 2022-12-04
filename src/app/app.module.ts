@@ -14,9 +14,9 @@ import { IconLabelComponent } from './icon-label/icon-label.component';
 import { TagComponent } from './tag/tag.component';
 import { ApplyButtonComponent } from './apply-button/apply-button.component';
 import { JobDetailHeaderComponent } from './job-detail-header/job-detail-header.component';
-import { JobDescriptionComponent } from './job-description/job-description.component';
 import { JobDetailFooterComponent } from './job-detail-footer/job-detail-footer.component';
 import { StepComponent } from './step/step.component';
+import { JobDetailDescriptionComponent } from './job-detail/job-detail-description/job-detail-description.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +32,9 @@ import { StepComponent } from './step/step.component';
     TagComponent,
     ApplyButtonComponent,
     JobDetailHeaderComponent,
-    JobDescriptionComponent,
     JobDetailFooterComponent,
     StepComponent,
+    JobDetailDescriptionComponent,
   ],
   imports: [
     BrowserModule,

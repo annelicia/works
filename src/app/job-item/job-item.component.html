@@ -1,4 +1,4 @@
-<div [class]="selected ? 'job-item-container job-item-container-selected' : 'job-item-container'"
+<div *ngIf="job" [class]="selected ? 'job-item-container job-item-container-selected' : 'job-item-container'"
     (click)="select.emit()">
     <div class="job-item-role">{{ job.publicTitle }}</div>
     <div class="job-item-company-summary">
