@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { JOB_IDS_FILTERED } from 'src/constants/jobIds';
-import { Job } from '../job.service';
+import { Job } from '../../common/services/job/job.service';
 
 @Component({
   selector: 'app-job-list',

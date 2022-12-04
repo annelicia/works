@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IconLabelComponent } from '../icon-label/icon-label.component';
+import { IconLabelComponent } from '../../../common/components/icon-label/icon-label.component';
 
 import { JobItemComponent } from './job-item.component';
 

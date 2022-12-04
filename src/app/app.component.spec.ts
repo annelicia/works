@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { ApplyButtonComponent } from './apply-button/apply-button.component';
-import { ChipItemComponent } from './chip-item/chip-item.component';
-import { ChipSelectorComponent } from './chip-selector/chip-selector.component';
-import { JobDetailDescriptionComponent } from './job-detail/job-detail-description/job-detail-description.component';
-import { JobDetailFooterComponent } from './job-detail/job-detail-footer/job-detail-footer.component';
-import { JobDetailHeaderComponent } from './job-detail/job-detail-header/job-detail-header.component';
-import { JobDetailComponent } from './job-detail/job-detail.component';
-import { JobListComponent } from './job-list/job-list.component';
+import { ApplyButtonComponent } from './common/components/apply-button/apply-button.component';
+import { ChipItemComponent } from './common/components/chip-item/chip-item.component';
+import { ChipSelectorComponent } from './common/components/chip-selector/chip-selector.component';
+import { JobDetailDescriptionComponent } from './job/job-detail/job-detail-description/job-detail-description.component';
+import { JobDetailFooterComponent } from './job/job-detail/job-detail-footer/job-detail-footer.component';
+import { JobDetailHeaderComponent } from './job/job-detail/job-detail-header/job-detail-header.component';
+import { JobDetailComponent } from './job/job-detail/job-detail.component';
+import { JobListComponent } from './job/job-list/job-list.component';
 import { JobComponent } from './job/job.component';
 import { TechnologySelectorComponent } from './technology-selector/technology-selector.component';
 

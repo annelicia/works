@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { JobService, Skill } from '../job.service';
+import { JobService } from '../common/services/job/job.service';
 
 @Component({
   selector: 'app-technology-selector',

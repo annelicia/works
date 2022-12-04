@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ChipItemComponent } from '../chip-item/chip-item.component';
-import { ChipSelectorComponent } from '../chip-selector/chip-selector.component';
+import { ChipItemComponent } from '../common/components/chip-item/chip-item.component';
+import { ChipSelectorComponent } from '../common/components/chip-selector/chip-selector.component';
 
 import { TechnologySelectorComponent } from './technology-selector.component';
 

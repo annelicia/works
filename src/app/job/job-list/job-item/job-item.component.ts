@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import formatDistance from 'date-fns/formatDistance';
-import { Job } from '../job.service';
+import { Job } from '../../../common/services/job/job.service';
 
 @Component({
   selector: 'app-job-item',

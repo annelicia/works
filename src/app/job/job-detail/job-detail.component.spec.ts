@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ApplyButtonComponent } from '../apply-button/apply-button.component';
-import { IconLabelComponent } from '../icon-label/icon-label.component';
-import { StepComponent } from '../step/step.component';
-import { TagComponent } from '../tag/tag.component';
+import { ApplyButtonComponent } from '../../common/components/apply-button/apply-button.component';
+import { IconLabelComponent } from '../../common/components/icon-label/icon-label.component';
+import { StepComponent } from '../../common/components/step/step.component';
+import { TagComponent } from '../../common/components/tag/tag.component';
 import { JobDetailDescriptionComponent } from './job-detail-description/job-detail-description.component';
 import { JobDetailFooterComponent } from './job-detail-footer/job-detail-footer.component';
 import { JobDetailHeaderComponent } from './job-detail-header/job-detail-header.component';

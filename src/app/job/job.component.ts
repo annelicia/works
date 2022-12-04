@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Job, JobService } from '../job.service';
+import { Job, JobService } from '../common/services/job/job.service';
 
 @Component({
   selector: 'app-job',
