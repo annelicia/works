@@ -64,6 +64,12 @@
     margin: -20px;
 }
 
+@media only screen and (max-width: 1200px) {
+    .process-container {
+        margin: 0 auto;
+    }
+}
+
 .app-step {
     counter-increment: counter;
     padding: 20px;
