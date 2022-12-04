@@ -1,5 +1,5 @@
 .job-item-container {
-    padding: 24px 8px 24px 16px;
+    padding: 24px 16px;
     background-color: #fff;
     cursor: pointer;
     box-sizing: border-box;
@@ -7,7 +7,7 @@
 
 @media only screen and (min-width: 768px) {
     .job-item-container {
-        padding: 24px 16px 24px 24px;
+        padding: 24px;
     }
 }
 
@@ -57,6 +57,7 @@
 }
 
 .job-item-company-summary {
+    margin-right: -8px;
     margin-top: 12px;
     display: grid;
     grid-template-columns: 3fr 2fr 80px;
@@ -66,6 +67,7 @@
     font-size: inherit;
     text-align: left;
     box-sizing: border-box;
+    align-items: center;
 }
 
 .job-item-company-summary-days {
