@@ -18,7 +18,6 @@ import { JobDetailDescriptionComponent } from './job/job-detail/job-detail-descr
 import { JobDetailFooterComponent } from './job/job-detail/job-detail-footer/job-detail-footer.component';
 import { JobDetailHeaderComponent } from './job/job-detail/job-detail-header/job-detail-header.component';
 import { MobileFooterComponent } from './mobile-footer/mobile-footer.component';
-import { ApplyButtonTransitionsComponent } from './common/components/apply-button-transitions/apply-button-transitions.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,6 @@ import { ApplyButtonTransitionsComponent } from './common/components/apply-butto
     StepComponent,
     JobDetailDescriptionComponent,
     MobileFooterComponent,
-    ApplyButtonTransitionsComponent,
   ],
   imports: [
     BrowserModule,
