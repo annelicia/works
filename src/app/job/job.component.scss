@@ -4,7 +4,7 @@
     max-height: 1340px;
     overflow-x: hidden;
     overflow-y: scroll;
-
+    position: relative;
 }
 
 @media(min-width: 1024px) {
@@ -14,8 +14,6 @@
 }
 
 .app-job-detail {
-    // TODO: Delete width.
-    width: 838.61px;
     display: none;
 }
 

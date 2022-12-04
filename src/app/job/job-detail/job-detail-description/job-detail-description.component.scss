@@ -49,3 +49,37 @@ $maxContentHeight: 430px;
 .read-more-link:hover::after {
     width: 100%;
 }
+
+
+.job-description {
+    margin: 0;
+}
+
+.job-description-body p {
+    margin: 0;
+}
+
+.job-description-body p:first-child>strong {
+    margin-top: 0
+}
+
+.job-description-body p>strong {
+    color: #212121;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 0;
+    display: inline-block;
+}
+
+.job-description-body ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: disc none outside;
+    padding: 0;
+}
+
+.job-description-body ul>li {
+    margin-left: 32px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}

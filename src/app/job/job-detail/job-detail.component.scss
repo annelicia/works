@@ -5,6 +5,11 @@
     height: 100%;
 }
 
+.job-detail-header-description {
+    display: flex;
+    flex-direction: column;
+}
+
 .job-detail-header {
     padding: 32px;
     border-bottom: 1px solid #eee;
