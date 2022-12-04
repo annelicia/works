@@ -1,0 +1,19 @@
+$button-color: #fff;
+$button-bg-color: #2e6edf;
+$button-bg-color-hover: #2961c4;
+
+.apply-button {
+    color: $button-color;
+    background-color: $button-bg-color;
+    font-size: 16px;
+    border: 1px solid $button-bg-color;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    padding: 1em 1.5em;
+    font-weight: 500;
+    transition: all .2s ease-in-out;
+}
+
+.apply-button:hover {
+    background-color: $button-bg-color-hover;
+}

@@ -1,5 +1,6 @@
 :root {
     --gutter: 32px;
+    --color-text: #212121;
 }
 
 @media only screen and (max-width: 767px) {
@@ -38,6 +39,14 @@
     font-display: swap
 }
 
+@font-face {
+    font-family: icomoon;
+    src: url(./assets/fonts/icomoon.woff?ek8ii5) format("woff"), url(./assets/fonts/icomoon.ttf?ek8ii5) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
 html {
     font-family: Gordita;
     font-size: 10px;
@@ -52,16 +61,20 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    color: var(--color-text, #000);
+}
+
 ::-webkit-scrollbar {
-    width: 8px
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
     background-color: hsla(0, 0%, 87%, .75);
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #aaa
+    background-color: #aaa;
 }

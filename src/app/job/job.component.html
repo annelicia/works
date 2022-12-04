@@ -1,0 +1,3 @@
+<app-job-list class="app-job-list" [jobList]="getJobList() | async" [selectedJobId]="selectedJobId"
+    (select)="onSelect($event)"></app-job-list>
+<app-job-detail class="app-job-detail"></app-job-detail>

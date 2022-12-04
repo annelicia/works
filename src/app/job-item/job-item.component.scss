@@ -1,0 +1,63 @@
+.job-item-container {
+    padding: 24px 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    .job-item-container {
+        padding: 24px;
+    }
+}
+
+.job-item-container:hover:not(.job-item-container-selected) {
+    background-color: #f3f3f3;
+}
+
+.job-item-container-selected {
+    background-color: #f6f9fe;
+}
+
+.job-item-container-selected::before {
+    content: "";
+    position: absolute;
+    background-color: #2e6edf;
+    width: 6px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+.job-item-tag {
+    margin-top: 12px;
+}
+
+.tag-item-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.job-item-role {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.job-item-company-summary {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 3fr 2fr 80px;
+    grid-gap: 6px;
+    gap: 6px;
+    color: #666;
+    font-size: inherit;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.job-item-company-summary-days {
+    font-size: 12px;
+    text-align: right;
+}

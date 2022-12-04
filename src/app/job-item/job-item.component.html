@@ -1,0 +1,15 @@
+<div [class]="selected ? 'job-item-container job-item-container-selected' : 'job-item-container'"
+    (click)="select.emit()">
+    <div class="job-item-role">{{ job.publicTitle }}</div>
+    <div class="job-item-company-summary">
+        <app-icon-label class="app-icon-label" [text]="job.industry" classIcon="icon-business"></app-icon-label>
+        <app-icon-label class="app-icon-label" [text]="getString(job.companySize)" classIcon="icon-group">
+        </app-icon-label>
+        <div class="job-item-company-summary-days">{{ getStringDateDistance(job.publishedOnJobBoard) }}</div>
+    </div>
+    <div class="job-item-tag">
+        <div class="tag-item-container">
+            <app-tag *ngFor="let tag of tags" [text]="tag"></app-tag>
+        </div>
+    </div>
+</div>

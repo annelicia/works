@@ -1,5 +1,9 @@
 $container-width: 1208px;
 
+* {
+    height: 100%;
+}
+
 .layout {
     display: flex;
     flex-direction: column;
@@ -9,18 +13,25 @@ $container-width: 1208px;
 
 @media(min-width: 769px) {
     .layout {
-        padding: 5.6rem 0
+        padding: 5.6rem 0;
     }
 }
 
 @media(min-width: 1025px) {
     .layout {
-        padding: 8rem 0
+        padding: 8rem 0;
     }
 }
 
 .home-container {
+    width: 100%;
     max-width: calc($container-width + var(--gutter) * 2);
     padding: 0 var(--gutter);
     box-sizing: border-box;
+}
+
+.job-container {
+    margin-top: 56px;
+    display: flex;
+    gap: 10px;
 }

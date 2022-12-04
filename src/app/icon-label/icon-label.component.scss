@@ -1,0 +1,100 @@
+.label-text {
+    display: flex;
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 1.8rem;
+}
+
+// TODO: Yg gak kepake dibawah ini dihapus.
+[class*=" icon-"],
+[class^=icon-] {
+    font-family: icomoon !important;
+    speak: never;
+    font-style: normal;
+    font-weight: 400;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon-calendar:before {
+    content: "";
+    color: #666
+}
+
+.icon-group:before {
+    content: "";
+    color: #666
+}
+
+.icon-place:before {
+    content: "";
+    color: #666
+}
+
+.icon-business:before {
+    content: "";
+    color: #666
+}
+
+.icon-heart:before {
+    content: "";
+    color: #f86567
+}
+
+.icon-whatsup:before {
+    content: "";
+    color: #25d366
+}
+
+.icon-linkedin:before {
+    content: "";
+    color: #007ab9
+}
+
+.icon-twitter:before {
+    content: "";
+    color: #55acee
+}
+
+.icon-facebook:before {
+    content: "";
+    color: #45619d
+}
+
+.icon-play:before {
+    content: ""
+}
+
+.icon-chevron-down:before {
+    content: ""
+}
+
+.icon-brief:before {
+    content: ""
+}
+
+.icon-right-arrow:before {
+    content: ""
+}
+
+.icon-chevron-right:before {
+    content: ""
+}
+
+.icon-chevron-left:before {
+    content: ""
+}
+
+.icon-star-full:before {
+    content: ""
+}
+
+.icon-close:before {
+    content: ""
+}
