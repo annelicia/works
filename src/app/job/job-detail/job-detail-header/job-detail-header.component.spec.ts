@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ApplyButtonComponent } from '../apply-button/apply-button.component';
-import { IconLabelComponent } from '../icon-label/icon-label.component';
-import { TagComponent } from '../tag/tag.component';
+import { ApplyButtonComponent } from 'src/app/apply-button/apply-button.component';
+import { IconLabelComponent } from 'src/app/icon-label/icon-label.component';
+import { TagComponent } from 'src/app/tag/tag.component';
 
 import { JobDetailHeaderComponent } from './job-detail-header.component';
 
@@ -11,8 +11,7 @@ describe('JobDetailHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        JobDetailHeaderComponent,
+      declarations: [JobDetailHeaderComponent,
         IconLabelComponent,
         ApplyButtonComponent,
         TagComponent,

@@ -13,10 +13,10 @@ import { JobItemComponent } from './job-item/job-item.component';
 import { IconLabelComponent } from './icon-label/icon-label.component';
 import { TagComponent } from './tag/tag.component';
 import { ApplyButtonComponent } from './apply-button/apply-button.component';
-import { JobDetailHeaderComponent } from './job-detail-header/job-detail-header.component';
-import { JobDetailFooterComponent } from './job-detail-footer/job-detail-footer.component';
 import { StepComponent } from './step/step.component';
 import { JobDetailDescriptionComponent } from './job-detail/job-detail-description/job-detail-description.component';
+import { JobDetailFooterComponent } from './job-detail/job-detail-footer/job-detail-footer.component';
+import { JobDetailHeaderComponent } from './job-detail/job-detail-header/job-detail-header.component';
 
 @NgModule({
   declarations: [

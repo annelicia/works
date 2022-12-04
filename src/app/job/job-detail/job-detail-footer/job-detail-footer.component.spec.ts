@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ApplyButtonComponent } from '../apply-button/apply-button.component';
-import { StepComponent } from '../step/step.component';
+import { ApplyButtonComponent } from 'src/app/apply-button/apply-button.component';
+import { StepComponent } from 'src/app/step/step.component';
 
 import { JobDetailFooterComponent } from './job-detail-footer.component';
 

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Job } from '../job.service';
+import { Job } from 'src/app/job.service';
 
 @Component({
   selector: 'app-job-detail-header',
