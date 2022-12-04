@@ -13,7 +13,7 @@ export class JobItemComponent {
   @Output() select = new EventEmitter();
 
   get tags() {
-    return this.job.requiredSkills.map(({ name }) => name).slice(0, 3);
+    return this.job.requiredSkills.concat(this.job.optionalSkills).map(({ name }) => name).slice(0, 3);
   }
 
   // TODO: implement func.
