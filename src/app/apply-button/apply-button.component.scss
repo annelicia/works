@@ -12,6 +12,10 @@ $button-bg-color-hover: #2961c4;
     padding: 1em 1.5em;
     font-weight: 500;
     transition: all .2s ease-in-out;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
 }
 
 .apply-button:hover {

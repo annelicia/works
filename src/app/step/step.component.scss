@@ -1,0 +1,32 @@
+.step-container {
+    font-size: 14px;
+    line-height: 1.57;
+    text-align: left;
+}
+
+.step-number::before {
+    content: counter(counter);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--color-text);
+    color: var(--color-white);
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.step-title {
+    font-size: 1.6rem;
+    margin: 0 0 0.1em;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.step-description {
+    margin: 0;
+    color: var(--color-text);
+}

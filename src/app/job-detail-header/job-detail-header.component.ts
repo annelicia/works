@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Job } from '../job.service';
 
 @Component({
   selector: 'app-job-detail-header',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./job-detail-header.component.scss']
 })
 export class JobDetailHeaderComponent {
+  @Input() job!: Job | null;
 
+  get tags() {
+    return this.job?.requiredSkills.concat(this.job.optionalSkills).map(({ name }) => name);
+  }
 }

@@ -1,0 +1,21 @@
+$maxContentHeight: 430px;
+
+.job-description-body {
+    max-height: $maxContentHeight;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.read-more-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.read-more-link {
+    font-weight: 500;
+    color: var(--color-blue);
+    letter-spacing: .04em;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+}

@@ -1,6 +1,9 @@
 :root {
     --gutter: 32px;
     --color-text: #212121;
+    --color-white: #fff;
+    --color-blue: #2e6edf;
+    --container-width: 1208px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -62,6 +65,7 @@ html {
 }
 
 body {
+    font-size: 16px;
     color: var(--color-text, #000);
 }
 

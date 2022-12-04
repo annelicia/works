@@ -1,0 +1,17 @@
+<section class="section-frame">
+    <div class="container">
+        <div class="header-container">
+            <div class="header">
+                <h2 class="title">How to become a Turing developer?</h2>
+                <div>Work with the best software companies in just 4 easy steps</div>
+            </div>
+        </div>
+        <div class="process-container">
+            <app-step class="app-step" *ngFor="let step of steps" [title]="step.title" [description]="step.description">
+            </app-step>
+        </div>
+        <div class="apply-container-animations">
+            <app-apply-button></app-apply-button>
+        </div>
+    </div>
+</section>

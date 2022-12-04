@@ -1,5 +1,18 @@
+.job-detail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
 .job-detail-header {
     padding: 32px;
     border-bottom: 1px solid #eee;
     display: block;
+}
+
+.job-description {
+    padding: 32px 70px 40px 32px;
+    min-height: 20rem;
+    line-height: 2;
 }

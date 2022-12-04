@@ -1,0 +1,55 @@
+.job-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #212121;
+}
+
+.company-summary-apply-button-container {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+}
+
+.company-summary {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 14px;
+    gap: 14px;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .company-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.salary-info {
+    display: flex;
+    align-items: center;
+    vertical-align: baseline;
+    line-height: 18px;
+}
+
+.icon-salary {
+    margin-right: 8px;
+}
+
+.apply-button-container {
+    justify-self: flex-end;
+    display: block;
+}
+
+.tag-container {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.time-posted {
+    margin-top: 16px;
+    color: #888;
+    font-size: 1.2rem;
+}

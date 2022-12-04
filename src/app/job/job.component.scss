@@ -1,8 +1,10 @@
 .app-job-list {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .09);
     flex-basis: 100%;
-    // TODO: Delete width.
-    width: 359.39px;
+    max-height: 1340px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
 }
 
 @media(min-width: 1024px) {
