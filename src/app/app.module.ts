@@ -13,6 +13,7 @@ import { JobItemComponent } from './job-item/job-item.component';
 import { IconLabelComponent } from './icon-label/icon-label.component';
 import { TagComponent } from './tag/tag.component';
 import { ApplyButtonComponent } from './apply-button/apply-button.component';
+import { JobDetailHeaderComponent } from './job-detail-header/job-detail-header.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ApplyButtonComponent } from './apply-button/apply-button.component';
     IconLabelComponent,
     TagComponent,
     ApplyButtonComponent,
+    JobDetailHeaderComponent,
   ],
   imports: [
     BrowserModule,

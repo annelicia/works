@@ -26,7 +26,7 @@ export class JobItemComponent {
     } else if (num <= 250) {
       return "51-250";
     } else if (num <= 10000) {
-      return "210-10K";
+      return "251-10K";
     } else {
       return "10K+";
     }
