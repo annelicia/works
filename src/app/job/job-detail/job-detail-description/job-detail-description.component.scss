@@ -55,30 +55,30 @@ $maxContentHeight: 430px;
     margin: 0;
 }
 
-.job-description-body p {
+.job-description-container p {
     margin: 0;
 }
 
-.job-description-body p:first-child>strong {
+.job-description-container p:first-child>strong {
     margin-top: 0
 }
 
-.job-description-body p>strong {
+.job-description-container p>strong {
     color: #212121;
     font-size: 1.6rem;
     font-weight: 500;
     margin-top: 0;
-    display: inline-block;
+    display: inline-block
 }
 
-.job-description-body ul {
+.job-description-container ul {
     margin-top: 0;
     margin-bottom: 0;
     list-style: disc none outside;
     padding: 0;
 }
 
-.job-description-body ul>li {
+.job-description-container ul>li {
     margin-left: 32px;
     display: list-item;
     text-align: -webkit-match-parent;
