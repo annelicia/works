@@ -9,4 +9,8 @@ export type IconName = "arrow";
 })
 export class ApplyButtonComponent {
   @Input() icon!: IconName | undefined;
+
+  getClassName() {
+    return this.icon === 'arrow' ? 'apply-button apply-button-transition' : 'apply-button';
+  }
 }

@@ -8,9 +8,9 @@ describe('ApplyButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ApplyButtonComponent ]
+      declarations: [ApplyButtonComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ApplyButtonComponent);
     component = fixture.componentInstance;
@@ -19,5 +19,29 @@ describe('ApplyButtonComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return correct className when icon is "arrow".', () => {
+    // Arrange.
+    const component = new ApplyButtonComponent();
+    component.icon = 'arrow';
+
+    // Act.
+    const className = component.getClassName();
+
+    // Assert.
+    expect(className).toBe('apply-button apply-button-transition');
+  });
+
+  it('should return correct className when icon is undefined.', () => {
+    // Arrange.
+    const component = new ApplyButtonComponent();
+    component.icon = undefined;
+
+    // Act.
+    const className = component.getClassName();
+
+    // Assert.
+    expect(className).toBe('apply-button');
   });
 });
