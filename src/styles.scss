@@ -111,7 +111,7 @@ video {
 
 @font-face {
     font-family: Gordita;
-    src: url(./assets/fonts/GorditaRegular.woff2) format("woff2"), url(./assets/fonts/GorditaRegular.woff) format("woff"), url(./assets/fonts/GorditaRegular.ttf) format("truetype");
+    src: url(/assets/fonts/GorditaRegular.woff2) format("woff2"), url(/assets/fonts/GorditaRegular.woff) format("woff"), url(/assets/fonts/GorditaRegular.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap
@@ -119,7 +119,7 @@ video {
 
 @font-face {
     font-family: Gordita;
-    src: url(./assets/fonts/GorditaMedium.woff2) format("woff2"), url(./assets/fonts/GorditaMedium.woff) format("woff"), url(./assets/fonts/GorditaMedium.ttf) format("truetype");
+    src: url(/assets/fonts/GorditaMedium.woff2) format("woff2"), url(/assets/fonts/GorditaMedium.woff) format("woff"), url(/assets/fonts/GorditaMedium.ttf) format("truetype");
     font-weight: 500;
     font-style: normal;
     font-display: swap
@@ -127,7 +127,7 @@ video {
 
 @font-face {
     font-family: Gordita;
-    src: url(./assets/fonts/GorditaRegular-Italic.woff2) format("woff2"), url(./assets/fonts/GorditaRegular-Italic.woff) format("woff"), url(./assets/fonts/GorditaRegular-Italic.ttf) format("truetype");
+    src: url(/assets/fonts/GorditaRegular-Italic.woff2) format("woff2"), url(/assets/fonts/GorditaRegular-Italic.woff) format("woff"), url(/assets/fonts/GorditaRegular-Italic.ttf) format("truetype");
     font-weight: 400;
     font-style: italic;
     font-display: swap
@@ -135,7 +135,7 @@ video {
 
 @font-face {
     font-family: icomoon;
-    src: url(./assets/fonts/icomoon.woff?ek8ii5) format("woff"), url(./assets/fonts/icomoon.ttf?ek8ii5) format("truetype");
+    src: url(/assets/fonts/icomoon.woff?ek8ii5) format("woff"), url(/assets/fonts/icomoon.ttf?ek8ii5) format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: block
