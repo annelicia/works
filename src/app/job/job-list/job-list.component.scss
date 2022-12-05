@@ -18,7 +18,10 @@
 }
 
 .svg-loading {
-    width: 100%;
-    height: 148;
-    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.job-item-outer {
+    display: flex;
+    flex-direction: column;
 }

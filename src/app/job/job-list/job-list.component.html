@@ -1,31 +1,33 @@
 <div class="job-list-container">
-    <div class="job-item-container" *ngFor="let job of jobList">
-        <app-job-item class="job-item" [job]="job" [selected]="job.jobId === selectedJobId"
-            (select)="select.emit(job.jobId)">
-        </app-job-item>
+    <div class="job-item-outer">
+        <div class="job-item-container" *ngFor="let job of jobList">
+            <app-job-item class="job-item" [job]="job" [selected]="job.jobId === selectedJobId"
+                (select)="select.emit(job.jobId)">
+            </app-job-item>
+        </div>
+        <svg class="svg-loading" height="148" width="100%" *ngFor="let _ of [1, 1, 1, 1]">
+            <title>Loading...</title>
+            <rect x="0" y="0" width="100%" height="100%" clip-path="url(#live-job-diff)"
+                style="fill: url(&quot;#live-job-animated-diff&quot;);"></rect>
+            <defs>
+                <clipPath id="live-job-diff">
+                    <rect x="0" y="0" rx="0" ry="0" width="100%" height="148"></rect>
+                </clipPath>
+                <linearGradient id="live-job-animated-diff">
+                    <stop offset="0%" stop-color="#f5f6f7" stop-opacity="1">
+                        <animate attributeName="offset" values="-2; -2; 1" keyTimes="0; 0.25; 1" dur="1.2s"
+                            repeatCount="indefinite"></animate>
+                    </stop>
+                    <stop offset="50%" stop-color="#eee" stop-opacity="1">
+                        <animate attributeName="offset" values="-1; -1; 2" keyTimes="0; 0.25; 1" dur="1.2s"
+                            repeatCount="indefinite"></animate>
+                    </stop>
+                    <stop offset="100%" stop-color="#f5f6f7" stop-opacity="1">
+                        <animate attributeName="offset" values="0; 0; 3" keyTimes="0; 0.25; 1" dur="1.2s"
+                            repeatCount="indefinite"></animate>
+                    </stop>
+                </linearGradient>
+            </defs>
+        </svg>
     </div>
-    <svg height="148" width="100%" *ngFor="let _ of [1, 1, 1, 1]">
-        <title>Loading...</title>
-        <rect x="0" y="0" width="100%" height="100%" clip-path="url(#live-job-diff)"
-            style="fill: url(&quot;#live-job-animated-diff&quot;);"></rect>
-        <defs>
-            <clipPath id="live-job-diff">
-                <rect x="0" y="0" rx="0" ry="0" width="100%" height="148"></rect>
-            </clipPath>
-            <linearGradient id="live-job-animated-diff">
-                <stop offset="0%" stop-color="#f5f6f7" stop-opacity="1">
-                    <animate attributeName="offset" values="-2; -2; 1" keyTimes="0; 0.25; 1" dur="1.2s"
-                        repeatCount="indefinite"></animate>
-                </stop>
-                <stop offset="50%" stop-color="#eee" stop-opacity="1">
-                    <animate attributeName="offset" values="-1; -1; 2" keyTimes="0; 0.25; 1" dur="1.2s"
-                        repeatCount="indefinite"></animate>
-                </stop>
-                <stop offset="100%" stop-color="#f5f6f7" stop-opacity="1">
-                    <animate attributeName="offset" values="0; 0; 3" keyTimes="0; 0.25; 1" dur="1.2s"
-                        repeatCount="indefinite"></animate>
-                </stop>
-            </linearGradient>
-        </defs>
-    </svg>
 </div>
