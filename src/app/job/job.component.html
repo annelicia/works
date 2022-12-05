@@ -1,3 +1,4 @@
-<app-job-list class="app-job-list" [jobList]="jobList" [selectedJobId]="selectedJobId" (select)="onSelect($event)">
+<app-job-list class="app-job-list" [jobList]="jobList" [selectedJobId]="selectedJobId" (select)="onSelect($event)"
+    (scroll)="onScroll($event)">
 </app-job-list>
-<app-job-detail class="app-job-detail" [job]="selectedJob"></app-job-detail>
+<app-job-detail class="app-job-detail" [job]="getSelectedJob()"></app-job-detail>

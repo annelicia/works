@@ -12,10 +12,12 @@ import { TagComponent } from '../common/components/tag/tag.component';
 
 import { JobComponent } from './job.component';
 import { FakeJobServiceModuleBuilder } from '../common/services/job/job.service.fake';
+import { JobService } from '../common/services/job/job.service';
 
 describe('JobComponent', () => {
   let component: JobComponent;
   let fixture: ComponentFixture<JobComponent>;
+  let jobService: JobService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -41,9 +43,52 @@ describe('JobComponent', () => {
     fixture = TestBed.createComponent(JobComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    jobService = TestBed.inject(JobService);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should fetch when remaining height of job list is less than threshold.', () => {
+    // Arrange.
+    component.offsetFetch = 0;
+    component.isFetching = false;
+    const event = {
+      target: {
+        scrollHeight: '5000px',
+        clientHeight: '1000px',
+        scrollTop: '2500px',
+      }
+    }
+
+    // Act.
+    const element = fixture.nativeElement;
+    const elementAppJobList = element.querySelector(".app-job-list");
+    elementAppJobList.dispatchEvent(new Event('scroll', event as any));
+
+    // Assert.
+    expect(jobService.getJobList).toHaveBeenCalledWith(30);
+  });
+
+  it('shouldn\'t fetch when isFetching is true.', () => {
+    // Arrange.
+    component.offsetFetch = 0;
+    component.isFetching = true;
+    const event = {
+      target: {
+        scrollHeight: '5000px',
+        clientHeight: '1000px',
+        scrollTop: '2500px',
+      }
+    }
+
+    // Act.
+    const element = fixture.nativeElement;
+    const elementAppJobList = element.querySelector(".app-job-list");
+    elementAppJobList.dispatchEvent(new Event('scroll', event as any));
+
+    // Assert.
+    expect(jobService.getJobList).not.toHaveBeenCalledWith(30);
   });
 });

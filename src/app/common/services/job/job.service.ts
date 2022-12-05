@@ -1926,12 +1926,12 @@ export class JobService {
     return this.skills;
   }
 
-  getJobList(): Observable<Job[]> {
-    return this.http.get<Job[]>(this.getJobListUrl());
+  getJobList(offset: number): Observable<Job[]> {
+    return this.http.get<Job[]>(this.getJobListUrl(offset));
   }
 
-  private getJobListUrl() {
-    return "https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&skillIds=158&limit=30&locale=en";
+  private getJobListUrl(offset: number) {
+    return `https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&skillIds=2031%2C2101%2C433%2C1827%2C857%2C1012%2C1403%2C836%2C234%2C1013%2C720&limit=30&offset=${offset}&locale=en`;
   }
 
   getJobDetail(): Observable<JobDetail> {
