@@ -18,5 +18,5 @@
     <div class="tag-container">
         <app-tag *ngFor="let tag of tags" [text]="tag"></app-tag>
     </div>
-    <div class="time-posted">Posted {{ getPublishedDateString() }}</div>
+    <div class="time-posted" *ngIf="getPublishedDateString() !== ''">{{ 'Posted ' + getPublishedDateString()}}</div>
 </div>
