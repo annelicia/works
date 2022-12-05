@@ -101,6 +101,7 @@ export class JobService {
     if (force) {
       this.jobList.next([]);
       this.jobDetail.next(undefined);
+      this.offsetFetch = 0;
     }
     this.subscription = this.getJobList().subscribe(jobListNew => {
       this.jobList.next([...this.jobList.getValue(), ...jobListNew]);
