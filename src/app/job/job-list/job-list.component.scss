@@ -9,6 +9,12 @@
 
 .job-list-container {
     max-height: 1340px;
+    overflow-y: scroll;
+}
+
+.job-list-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .svg-loading {

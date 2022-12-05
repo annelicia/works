@@ -5,6 +5,7 @@
     --color-white: #fff;
     --container-width: 1208px;
     --gutter: 32px;
+    --color-link: #2e6edf;
 }
 
 a,
@@ -171,4 +172,8 @@ body {
 ::-webkit-scrollbar-thumb {
     border-radius: 8px;
     background-color: #aaa;
+}
+
+a {
+    text-decoration: none;
 }

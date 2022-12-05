@@ -1,7 +1,12 @@
-<div class="job-description-container" *ngIf="jobDetail">
+<div class="job-description-container">
     <p class="job-description"><strong>Job description</strong></p>
-    <div class="job-description-body-container">
+    <section *ngIf="!jobDetail" class="loading-description-outer">
+        <div class="loading-container">
+            <div class="loader"></div>
+        </div>
+    </section>
+    <div class="job-description-body-container" *ngIf="jobDetail">
         <div class="job-description-body" [innerHTML]="jobDetail.description | safeHtml"></div>
     </div>
-    <div class="read-more-container"><a class="read-more-link">View full job description</a></div>
+    <div class="read-more-container" *ngIf="jobDetail"><a class="read-more-link">View full job description</a></div>
 </div>
