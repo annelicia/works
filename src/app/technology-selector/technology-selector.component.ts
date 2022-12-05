@@ -14,7 +14,7 @@ export class TechnologySelectorComponent {
     return this.skills.map(skill => ({
       id: skill.id,
       value: skill.label,
-      selected: this.selectedTypes.has(skill.id) ? true : false,
+      selected: this.selectedTypes.includes(skill.id) ? true : false,
     }));
   }
 

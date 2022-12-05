@@ -61,10 +61,11 @@ export class JobService {
   private isFetching: boolean = false;
   private readonly jobList = new BehaviorSubject<Job[]>([]);
   readonly jobList$ = this.jobList.asObservable();
-  private selectedTechnologyIds: Set<string> = new Set();
   private jobDetail = new BehaviorSubject<JobDetail | undefined>(undefined);  // undefined means loading.
   readonly jobDetail$ = this.jobDetail.asObservable();
   private selectedJobId: string | undefined;  // undefined means loading.
+
+  constructor(private http: HttpClient) { }
 
   selectJobId(jobId: string) {
     if (this.selectedJobId === jobId) return;
@@ -110,19 +111,22 @@ export class JobService {
     });
   }
 
-  constructor(private http: HttpClient) { }
-
   selectType(id: string) {
-    if (this.selectedTechnologyIds.has(id)) {
-      this.selectedTechnologyIds.delete(id);
+    let selectedTechnologyIds = this.getSelectedTechnologyIds();
+    if (selectedTechnologyIds.includes(id)) {
+      selectedTechnologyIds = selectedTechnologyIds.filter(selectedId => selectedId !== id);
     } else {
-      this.selectedTechnologyIds.add(id);
+      selectedTechnologyIds.push(id);
     }
+    sessionStorage.setItem('selectedTechnologyIds', JSON.stringify(selectedTechnologyIds));
     this.fetchJobList(true);
   }
 
-  getSelectedTechnologyIds() {
-    return this.selectedTechnologyIds;
+  getSelectedTechnologyIds(): string[] {
+    const selectedTechnologyIdsFromSessionStorage = sessionStorage.getItem('selectedTechnologyIds');
+    if (!selectedTechnologyIdsFromSessionStorage) return [];
+
+    return JSON.parse(selectedTechnologyIdsFromSessionStorage);
   }
 
   getSkills(): Skill[] {
@@ -134,7 +138,7 @@ export class JobService {
   }
 
   private getJobListUrl(offset: number) {
-    let skillIdsUrl = Array.from(this.selectedTechnologyIds)
+    let skillIdsUrl = Array.from(this.getSelectedTechnologyIds())
       .reduce<number[]>((prev, id) => {
         const skillNow = SKILLS_MAP.get(id);
         if (skillNow) {
