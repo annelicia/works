@@ -13,12 +13,17 @@
 }
 
 .job-list-container::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 3px;
     background-color: rgba(0, 0, 0, .5);
 }
 
-.svg-loading {
+.svg-loading:not(:last-child) {
     margin-bottom: 6px;
+    height: 148px;
+}
+
+.svg-loading:last-child {
+    height: 146px;
 }
 
 .job-item-outer {
