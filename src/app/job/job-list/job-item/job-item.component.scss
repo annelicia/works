@@ -11,12 +11,6 @@
     }
 }
 
-@media(max-width: 1024px) {
-    .job-item-container {
-        padding: 24px;
-    }
-}
-
 .job-item-container:hover:not(.job-item-container-selected) {
     background-color: #f3f3f3;
 }

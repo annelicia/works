@@ -13,10 +13,7 @@ export class JobComponent implements OnInit {
 
   ngOnInit() {
     this.jobService.jobList$.subscribe(jobList => {
-      this.jobList = jobList.filter(eachJob => JOB_IDS_FILTERED.has(eachJob.jobId));
-      if (this.jobList.length > 0) {
-        this.jobService.selectJobId(this.jobList[0].jobId);
-      }
+      this.jobList = jobList;
     });
     this.jobService.fetchJobList();
   }

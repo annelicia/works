@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Skill, SKILLS, SKILLS_MAP } from '../../constants/skills';
+import { JOB_IDS_FILTERED } from '../../constants/jobIds';
 
 interface JobSkill {
   id: number;
@@ -98,9 +99,12 @@ export class JobService {
     if (force) {
       this.jobList.next([]);
       this.jobDetail.next(undefined);
-      this.offsetFetch = 0;
     }
     this.subscription = this.getJobList().subscribe(jobListNew => {
+      jobListNew = jobListNew.filter(eachJob => JOB_IDS_FILTERED.has(eachJob.jobId));
+      if (this.jobList.getValue().length === 0) {
+        this.selectJobId(jobListNew[0].jobId);
+      }
       this.jobList.next([...this.jobList.getValue(), ...jobListNew]);
       this.isFetching = false;
       this.offsetFetch = this.offsetFetch + 30;
@@ -115,6 +119,7 @@ export class JobService {
       selectedTechnologyIds.push(id);
     }
     sessionStorage.setItem('selectedTechnologyIds', JSON.stringify(selectedTechnologyIds));
+    this.offsetFetch = 0;
     this.fetchJobList(true);
   }
 
