@@ -69,7 +69,6 @@ export class JobService {
   constructor(private http: HttpClient) { }
 
   selectJobId(jobId: string) {
-    if (this.selectedJobId === jobId) return;
     this.selectedJobId = jobId;
     this.getJobDetail();
   }
