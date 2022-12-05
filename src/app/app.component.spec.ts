@@ -3,12 +3,15 @@ import { AppComponent } from './app.component';
 import { ApplyButtonComponent } from './common/components/apply-button/apply-button.component';
 import { ChipItemComponent } from './common/components/chip-item/chip-item.component';
 import { ChipSelectorComponent } from './common/components/chip-selector/chip-selector.component';
+import { JobService } from './common/services/job/job.service';
+import { FakeJobServiceModuleBuilder } from './common/services/job/job.service.fake';
 import { JobDetailDescriptionComponent } from './job/job-detail/job-detail-description/job-detail-description.component';
 import { JobDetailFooterComponent } from './job/job-detail/job-detail-footer/job-detail-footer.component';
 import { JobDetailHeaderComponent } from './job/job-detail/job-detail-header/job-detail-header.component';
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
 import { JobListComponent } from './job/job-list/job-list.component';
 import { JobComponent } from './job/job.component';
+import { MobileFooterComponent } from './mobile-footer/mobile-footer.component';
 import { TechnologySelectorComponent } from './technology-selector/technology-selector.component';
 
 describe('AppComponent', () => {
@@ -16,6 +19,7 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        MobileFooterComponent,
         TechnologySelectorComponent,
         ChipSelectorComponent,
         ChipItemComponent,
@@ -27,6 +31,9 @@ describe('AppComponent', () => {
         JobDetailFooterComponent,
         ApplyButtonComponent,
       ],
+      providers: [
+        new FakeJobServiceModuleBuilder().build()
+      ]
     }).compileComponents();
   });
 

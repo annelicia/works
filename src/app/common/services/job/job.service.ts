@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 export interface Skill {
   id: string;
@@ -1906,7 +1907,7 @@ export class JobService {
   ]
   private selectedTypes: Set<string> = new Set();
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   selectType(id: string) {
     console.log('select type', id);
@@ -1926,10 +1927,18 @@ export class JobService {
   }
 
   getJobList(): Observable<Job[]> {
-    return of(this.jobList);
+    return this.http.get<Job[]>(this.getJobListUrl());
+  }
+
+  private getJobListUrl() {
+    return "https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&skillIds=158&limit=30&locale=en";
   }
 
   getJobDetail(): Observable<JobDetail> {
-    return of(this.jobDetail);
+    return this.http.get<JobDetail>(this.getJobDetailUrl());
+  }
+
+  private getJobDetailUrl() {
+    return "https://works-api.vercel.app/api/getJobDetail?id=98460";
   }
 }

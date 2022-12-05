@@ -1,11 +1,10 @@
-<div *ngIf="job" [class]="selected ? 'job-item-container job-item-container-selected' : 'job-item-container'"
-    (click)="select.emit()">
+<div *ngIf="job" [class]="getContainerClassName()" (click)="select.emit()" aria-label="job-item-container">
     <div class="job-item-role">{{ job.publicTitle }}</div>
     <div class="job-item-company-summary">
         <app-icon-label class="app-icon-label" [text]="job.industry" classIcon="icon-business"></app-icon-label>
-        <app-icon-label class="app-icon-label" [text]="getString(job.companySize)" classIcon="icon-group">
+        <app-icon-label class="app-icon-label" [text]="getCompanySizeString()" classIcon="icon-group">
         </app-icon-label>
-        <div class="job-item-company-summary-days">{{ getStringDateDistance(job.publishedOnJobBoard) }}</div>
+        <div class="job-item-company-summary-days">{{ getPublishedDateString() }}</div>
     </div>
     <div class="job-item-tag">
         <div class="tag-item-container">

@@ -18,6 +18,7 @@ import { JobDetailDescriptionComponent } from './job/job-detail/job-detail-descr
 import { JobDetailFooterComponent } from './job/job-detail/job-detail-footer/job-detail-footer.component';
 import { JobDetailHeaderComponent } from './job/job-detail/job-detail-header/job-detail-header.component';
 import { MobileFooterComponent } from './mobile-footer/mobile-footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MobileFooterComponent } from './mobile-footer/mobile-footer.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

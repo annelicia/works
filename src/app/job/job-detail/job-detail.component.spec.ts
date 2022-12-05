@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FakeJobServiceModuleBuilder } from 'src/app/common/services/job/job.service.fake';
 import { ApplyButtonComponent } from '../../common/components/apply-button/apply-button.component';
 import { IconLabelComponent } from '../../common/components/icon-label/icon-label.component';
 import { StepComponent } from '../../common/components/step/step.component';
@@ -24,6 +25,9 @@ describe('JobDetailComponent', () => {
         JobDetailDescriptionComponent,
         JobDetailFooterComponent,
         StepComponent,
+      ],
+      providers: [
+        new FakeJobServiceModuleBuilder().build()
       ]
     })
       .compileComponents();

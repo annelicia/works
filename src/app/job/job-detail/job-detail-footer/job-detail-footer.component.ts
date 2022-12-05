@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StepsBecomeDeveloper, STEPS_BECOME_DEVELOPER } from 'src/constants/stepsBecomeDeveloper';
+import { StepsBecomeDeveloper, STEPS_BECOME_DEVELOPER } from 'src/app/common/constants/stepsBecomeDeveloper';
 
 @Component({
   selector: 'app-job-detail-footer',

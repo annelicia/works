@@ -11,6 +11,7 @@ import { StepComponent } from '../common/components/step/step.component';
 import { TagComponent } from '../common/components/tag/tag.component';
 
 import { JobComponent } from './job.component';
+import { FakeJobServiceModuleBuilder } from '../common/services/job/job.service.fake';
 
 describe('JobComponent', () => {
   let component: JobComponent;
@@ -30,6 +31,9 @@ describe('JobComponent', () => {
         IconLabelComponent,
         TagComponent,
         StepComponent,
+      ],
+      providers: [
+        new FakeJobServiceModuleBuilder().build()
       ]
     })
       .compileComponents();

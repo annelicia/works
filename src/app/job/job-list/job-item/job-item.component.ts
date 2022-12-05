@@ -16,23 +16,27 @@ export class JobItemComponent {
     return this.job.requiredSkills.concat(this.job.optionalSkills).map(({ name }) => name).slice(0, 3);
   }
 
-  getString(num: number | null) {
-    if (!num) return "0";
-    if (num <= 10) {
+  getContainerClassName() {
+    return this.selected ? 'job-item-container job-item-container-selected' : 'job-item-container';
+  }
+
+  getCompanySizeString() {
+    if (!this.job.companySize) return "0";
+    if (this.job.companySize <= 10) {
       return "1-10";
-    } else if (num <= 50) {
+    } else if (this.job.companySize <= 50) {
       return "11-50";
-    } else if (num <= 250) {
+    } else if (this.job.companySize <= 250) {
       return "51-250";
-    } else if (num <= 10000) {
+    } else if (this.job.companySize <= 10000) {
       return "251-10K";
     } else {
       return "10K+";
     }
   }
 
-  getStringDateDistance(stringDate: string) {
-    const distance = formatDistance(new Date(stringDate), new Date());
+  getPublishedDateString() {
+    const distance = formatDistance(new Date(this.job.publishedOnJobBoard), new Date());
     if (distance.includes('days')) {
       return Number(distance.split(' days')[0]) < 7 ? `${distance} ago` : '';
     } else if (distance.includes('day')) {

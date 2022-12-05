@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { JOB_IDS_FILTERED } from 'src/constants/jobIds';
+import { JOB_IDS_FILTERED } from 'src/app/common/constants/jobIds';
 import { Job } from '../../common/services/job/job.service';
 
 @Component({
