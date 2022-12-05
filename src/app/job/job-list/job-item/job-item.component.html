@@ -2,7 +2,7 @@
     <div class="job-item-role">{{ job.publicTitle }}</div>
     <div class="job-item-company-summary">
         <app-icon-label class="app-icon-label" [text]="job.industry" classIcon="icon-business"></app-icon-label>
-        <app-icon-label class="app-icon-label" [text]="getCompanySizeString()" classIcon="icon-group">
+        <app-icon-label class="app-icon-label" [text]="getCompanySize()" classIcon="icon-group">
         </app-icon-label>
         <div class="job-item-company-summary-days">{{ getPublishedDateString() }}</div>
     </div>

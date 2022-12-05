@@ -154,7 +154,7 @@ describe('JobItemComponent', () => {
       component.job = JOB_1;
 
       // Act.
-      const companySizeString = component.getCompanySizeString();
+      const companySizeString = component.getCompanySize();
 
       // Assert.
       expect(companySizeString).toBe('1-10');
@@ -166,7 +166,7 @@ describe('JobItemComponent', () => {
       component.job = JOB_2;
 
       // Act.
-      const companySizeString = component.getCompanySizeString();
+      const companySizeString = component.getCompanySize();
 
       // Assert.
       expect(companySizeString).toBe('11-50');

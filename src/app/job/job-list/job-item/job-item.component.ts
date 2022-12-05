@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import formatDistance from 'date-fns/formatDistance';
+import { getCompanySizeString } from 'src/app/common/utils/companySizeUtils';
+import { toDaysSinceToday } from 'src/app/common/utils/dateUtils';
 import { Job } from '../../../common/services/job/job.service';
 
 @Component({
@@ -20,29 +21,11 @@ export class JobItemComponent {
     return this.selected ? 'job-item-container job-item-container-selected' : 'job-item-container';
   }
 
-  getCompanySizeString() {
-    if (!this.job.companySize) return "0";
-    if (this.job.companySize <= 10) {
-      return "1-10";
-    } else if (this.job.companySize <= 50) {
-      return "11-50";
-    } else if (this.job.companySize <= 250) {
-      return "51-250";
-    } else if (this.job.companySize <= 10000) {
-      return "251-10K";
-    } else {
-      return "10K+";
-    }
+  getCompanySize() {
+    return getCompanySizeString(this.job.companySize);
   }
 
   getPublishedDateString() {
-    const distance = formatDistance(new Date(this.job.publishedOnJobBoard), new Date());
-    if (distance.includes('days')) {
-      return Number(distance.split(' days')[0]) < 7 ? `${distance} ago` : '';
-    } else if (distance.includes('day')) {
-      return `${distance} ago`;
-    } else {
-      return '';
-    }
+    return toDaysSinceToday(this.job.publishedOnJobBoard);
   }
 }
