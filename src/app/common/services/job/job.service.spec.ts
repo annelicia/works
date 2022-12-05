@@ -25,7 +25,8 @@ describe('JobService', () => {
     httpClientSpy.get.and.returnValue(of(expectedJobList));
 
     // Act.
-    service.getJobList().subscribe({
+    service.fetchJobList();
+    service.jobList$.subscribe({
       next: jobList => {
         // Assert.
         expect(jobList).toEqual(expectedJobList);

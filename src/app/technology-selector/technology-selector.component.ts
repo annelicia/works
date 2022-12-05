@@ -13,7 +13,7 @@ export class TechnologySelectorComponent {
   get chips() {
     return this.skills.map(skill => ({
       id: skill.id,
-      value: skill.name,
+      value: skill.label,
       selected: this.selectedTypes.has(skill.id) ? true : false,
     }));
   }
