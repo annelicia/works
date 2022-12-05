@@ -98,8 +98,10 @@ export class JobService {
       }
     }
     this.isFetching = true;
-    this.jobList.next([]);
-    this.jobDetail.next(undefined);
+    if (force) {
+      this.jobList.next([]);
+      this.jobDetail.next(undefined);
+    }
     this.subscription = this.getJobList().subscribe(jobListNew => {
       this.jobList.next([...this.jobList.getValue(), ...jobListNew]);
       this.isFetching = false;
