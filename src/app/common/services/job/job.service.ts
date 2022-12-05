@@ -82,10 +82,6 @@ export class JobService {
     this.http.get<JobDetail>(this.getJobDetailUrl()).subscribe(jobDetail => this.jobDetail.next(jobDetail));
   }
 
-  getIsFetching() {
-    return this.isFetching;
-  }
-
   getOffsetFetch() {
     return this.offsetFetch;
   }

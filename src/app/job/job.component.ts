@@ -25,14 +25,6 @@ export class JobComponent implements OnInit {
     this.jobService.selectJobId(jobId);
   }
 
-  onScroll(event: any) {
-    const remainingHeight = event.target.scrollHeight - event.target.scrollTop - event.target.clientHeight;
-    // TODO: Fix remainingHeight constant.
-    if (remainingHeight < 2000) {
-      this.jobService.fetchJobList();
-    }
-  }
-
   getSelectedJob() {
     const selectedJob = this.jobList.filter(job => job.jobId === this.jobService.getSelectedJobId());
     if (selectedJob) {
@@ -46,7 +38,7 @@ export class JobComponent implements OnInit {
     return this.jobService.getSelectedJobId();
   }
 
-  isLoading() {
-    return this.jobService.getIsFetching();
+  isLoadingFirstTime() {
+    return this.jobList.length === 0;
   }
 }

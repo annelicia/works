@@ -1,4 +1,4 @@
-<div class="job-list-container">
+<div class="job-list-container" (scroll)="onScroll($event)">
     <div class="job-item-outer">
         <div class="job-item-container" *ngFor="let job of jobList">
             <app-job-item class="job-item" [job]="job" [selected]="job.jobId === selectedJobId"
