@@ -9,16 +9,11 @@ import { Job, JobService } from '../common/services/job/job.service';
 export class JobComponent implements OnInit {
   selectedJobId: string = "98226";
   jobList: Job[] = [];
-  isFetching: boolean = false;
-  offsetFetch: number = 0;
   constructor(private jobService: JobService) { }
 
   ngOnInit() {
-    this.isFetching = true;
-    this.jobService.getJobList(this.offsetFetch).subscribe(jobList => {
-      this.jobList = jobList;
-      this.isFetching = false;
-    });
+    this.jobService.jobList$.subscribe(jobList => this.jobList = jobList);
+    this.jobService.fetchJobList();
   }
 
   onSelect(jobId: string) {
@@ -27,16 +22,10 @@ export class JobComponent implements OnInit {
 
   onScroll(event: any) {
     const remainingHeight = event.target.scrollHeight - event.target.scrollTop - event.target.clientHeight;
-    // TODO: edit if statement buat scroll new job.
-    if (remainingHeight < 2000 && !this.isFetching) {
-      this.isFetching = true;
-      this.offsetFetch = this.offsetFetch + 30;
-      this.jobService.getJobList(this.offsetFetch).subscribe(jobListNew => {
-        this.jobList = [...this.jobList, ...jobListNew];
-        this.isFetching = false;
-      });
+    // TODO: Fix remainingHeight constant.
+    if (remainingHeight < 2000) {
+      this.jobService.fetchJobList();
     }
-    console.log(remainingHeight);
   }
 
   getSelectedJob() {

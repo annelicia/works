@@ -19,7 +19,7 @@ export class TechnologySelectorComponent {
   }
 
   get selectedTypes() {
-    return this.jobService.getSelectedTypes();
+    return this.jobService.getSelectedTechnologyIds();
   }
 
   get skills() {

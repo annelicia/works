@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { of } from 'rxjs';
+import { NEVER, of } from 'rxjs';
 import { JOB_1, JOB_2 } from '../../constants/job';
 
 import { Job, JobService } from './job.service';
@@ -25,7 +25,7 @@ describe('JobService', () => {
     httpClientSpy.get.and.returnValue(of(expectedJobList));
 
     // Act.
-    service.getJobList(0).subscribe({
+    service.getJobList().subscribe({
       next: jobList => {
         // Assert.
         expect(jobList).toEqual(expectedJobList);
@@ -35,6 +35,19 @@ describe('JobService', () => {
     });
 
     // Assert.
-    expect(httpClientSpy.get.calls.count()).toBe(1);
+    expect(httpClientSpy.get).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call http once if the isLoading is true.', () => {
+    // Arrange.
+    httpClientSpy.get.and.returnValue(NEVER);
+
+    // Act.
+    service.fetchJobList();
+    service.fetchJobList();
+    service.fetchJobList();
+
+    // Assert.
+    expect(httpClientSpy.get).toHaveBeenCalledTimes(1);
   });
 });

@@ -52,8 +52,6 @@ describe('JobComponent', () => {
 
   it('should fetch when remaining height of job list is less than threshold.', () => {
     // Arrange.
-    component.offsetFetch = 0;
-    component.isFetching = false;
     const event = {
       target: {
         scrollHeight: '5000px',
@@ -68,27 +66,6 @@ describe('JobComponent', () => {
     elementAppJobList.dispatchEvent(new Event('scroll', event as any));
 
     // Assert.
-    expect(jobService.getJobList).toHaveBeenCalledWith(30);
-  });
-
-  it('shouldn\'t fetch when isFetching is true.', () => {
-    // Arrange.
-    component.offsetFetch = 0;
-    component.isFetching = true;
-    const event = {
-      target: {
-        scrollHeight: '5000px',
-        clientHeight: '1000px',
-        scrollTop: '2500px',
-      }
-    }
-
-    // Act.
-    const element = fixture.nativeElement;
-    const elementAppJobList = element.querySelector(".app-job-list");
-    elementAppJobList.dispatchEvent(new Event('scroll', event as any));
-
-    // Assert.
-    expect(jobService.getJobList).not.toHaveBeenCalledWith(30);
+    expect(jobService.fetchJobList).toHaveBeenCalledTimes(2);
   });
 });
