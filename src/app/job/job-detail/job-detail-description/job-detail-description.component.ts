@@ -12,6 +12,6 @@ export class JobDetailDescriptionComponent implements OnInit {
   constructor(private jobService: JobService) { }
 
   ngOnInit(): void {
-    // this.jobService.getJobDetail().subscribe(jobDetail => this.jobDetail = jobDetail);
+    this.jobService.getJobDetail().subscribe(jobDetail => this.jobDetail = jobDetail);
   }
 }

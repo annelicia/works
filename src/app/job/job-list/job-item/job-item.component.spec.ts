@@ -32,11 +32,31 @@ describe('JobItemComponent', () => {
     jasmine.clock().uninstall();
   });
 
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
   describe('get tags', () => {
     it('should return expected tags when job provided 3 requiredSkills.', () => {
       // Arrange.
       const component = new JobItemComponent();
-      component.job = JOB_1;
+      component.job = {
+        ...JOB_1,
+        requiredSkills: [
+          {
+            "id": 120,
+            "name": "Node.js"
+          },
+          {
+            "id": 2031,
+            "name": "React"
+          },
+          {
+            "id": 433,
+            "name": "AWS"
+          }
+        ],
+      };
 
       // Act.
       const tags = component.tags;
@@ -48,7 +68,20 @@ describe('JobItemComponent', () => {
     it('should return expected tags when job provided 2 requiredSkills and 0 optionalSkills.', () => {
       // Arrange.
       const component = new JobItemComponent();
-      component.job = JOB_3;
+      component.job = {
+        ...JOB_3,
+        requiredSkills: [
+          {
+            "id": 2031,
+            "name": "React"
+          },
+          {
+            "id": 158,
+            "name": "Typescript"
+          },
+        ],
+        optionalSkills: [],
+      };
 
       // Act.
       const tags = component.tags;
@@ -60,7 +93,25 @@ describe('JobItemComponent', () => {
     it('should return expected tags when job provided 2 requiredSkills and 1 optionalSkills.', () => {
       // Arrange.
       const component = new JobItemComponent();
-      component.job = JOB_4;
+      component.job = {
+        ...JOB_4,
+        requiredSkills: [
+          {
+            "id": 2031,
+            "name": "React"
+          },
+          {
+            "id": 158,
+            "name": "Typescript"
+          },
+        ],
+        optionalSkills: [
+          {
+            "id": 387,
+            "name": "HTML"
+          }
+        ],
+      };
 
       // Act.
       const tags = component.tags;
