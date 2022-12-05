@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JOB_IDS_FILTERED } from '../common/constants/jobIds';
 import { Job, JobService } from '../common/services/job/job.service';
 
 @Component({
@@ -7,17 +8,21 @@ import { Job, JobService } from '../common/services/job/job.service';
   styleUrls: ['./job.component.scss']
 })
 export class JobComponent implements OnInit {
-  selectedJobId: string = "98226";
   jobList: Job[] = [];
   constructor(private jobService: JobService) { }
 
   ngOnInit() {
-    this.jobService.jobList$.subscribe(jobList => this.jobList = jobList);
+    this.jobService.jobList$.subscribe(jobList => {
+      this.jobList = jobList.filter(eachJob => JOB_IDS_FILTERED.has(eachJob.jobId));
+      if (this.jobList.length > 0) {
+        this.jobService.selectJobId(this.jobList[0].jobId);
+      }
+    });
     this.jobService.fetchJobList();
   }
 
   onSelect(jobId: string) {
-    this.selectedJobId = jobId;
+    this.jobService.selectJobId(jobId);
   }
 
   onScroll(event: any) {
@@ -29,11 +34,15 @@ export class JobComponent implements OnInit {
   }
 
   getSelectedJob() {
-    const selectedJob = this.jobList.filter(job => job.jobId === this.selectedJobId);
+    const selectedJob = this.jobList.filter(job => job.jobId === this.jobService.getSelectedJobId());
     if (selectedJob) {
       return selectedJob[0];
     } else {
       return null;
     }
+  }
+
+  getSelectedJobId() {
+    return this.jobService.getSelectedJobId();
   }
 }

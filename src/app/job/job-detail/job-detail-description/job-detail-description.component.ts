@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { JobDetail, JobService } from 'src/app/common/services/job/job.service';
 
 @Component({
@@ -12,6 +12,6 @@ export class JobDetailDescriptionComponent implements OnInit {
   constructor(private jobService: JobService) { }
 
   ngOnInit(): void {
-    this.jobService.getJobDetail().subscribe(jobDetail => this.jobDetail = jobDetail);
+    this.jobService.jobDetail$.subscribe(jobDetail => this.jobDetail = jobDetail);
   }
 }

@@ -68,4 +68,18 @@ describe('JobComponent', () => {
     // Assert.
     expect(jobService.fetchJobList).toHaveBeenCalledTimes(2);
   });
+
+
+  it('should call onSelect when app-job-list clicked.', () => {
+    // Arrange.
+    const component = new JobComponent(jobService);
+
+    // Act.
+    const element = fixture.nativeElement;
+    const appJobList = element.querySelector('.app-job-list');
+    appJobList.dispatchEvent(new Event('select'));
+
+    // Assert.
+    expect(jobService.selectJobId).toHaveBeenCalledTimes(1);
+  });
 });

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { JOB_IDS_FILTERED } from 'src/app/common/constants/jobIds';
 import { Job } from '../../common/services/job/job.service';
 
 @Component({
@@ -9,10 +8,6 @@ import { Job } from '../../common/services/job/job.service';
 })
 export class JobListComponent {
   @Input() jobList!: Job[] | null;
-  @Input() selectedJobId!: string | null;
+  @Input() selectedJobId!: string | undefined;
   @Output() select = new EventEmitter();
-
-  get jobListFiltered() {
-    return this.jobList?.filter(eachJob => JOB_IDS_FILTERED.has(eachJob.jobId));
-  }
 }
