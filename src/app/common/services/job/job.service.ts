@@ -134,7 +134,7 @@ export class JobService {
   }
 
   private getJobListUrl(offset: number) {
-    const skillIdsUrl = Array.from(this.selectedTechnologyIds)
+    let skillIdsUrl = Array.from(this.selectedTechnologyIds)
       .reduce<number[]>((prev, id) => {
         const skillNow = SKILLS_MAP.get(id);
         if (skillNow) {
@@ -145,6 +145,9 @@ export class JobService {
         return prev;
       }, [])
       .join('%2C');
+    if (skillIdsUrl === '') {
+      return "https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&limit=30&locale=en";
+    }
     return `https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&skillIds=${skillIdsUrl}&limit=30&offset=${offset}&locale=en`;
   }
 
