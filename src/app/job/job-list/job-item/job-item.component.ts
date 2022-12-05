@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { getCompanySizeString } from 'src/app/common/utils/companySizeUtils';
 import { toDaysSinceToday } from 'src/app/common/utils/dateUtils';
+import { getIndustryString } from 'src/app/common/utils/jobIndustryUtils';
 import { Job } from '../../../common/services/job/job.service';
 
 @Component({
@@ -27,5 +28,9 @@ export class JobItemComponent {
 
   getPublishedDateString() {
     return toDaysSinceToday(this.job.publishedOnJobBoard);
+  }
+
+  getJobIndustry() {
+    return getIndustryString(this.job.industry);
   }
 }

@@ -1,5 +1,5 @@
 export function getCompanySizeString(num: number | null | undefined) {
-    if (num == null) return '1-10';
+    if (num == null) return '51-250';
     if (num <= 10) {
         return '1-10';
     } else if (num <= 50) {

@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { toDaysSinceToday } from 'src/app/common/utils/dateUtils';
 import { Job } from 'src/app/common/services/job/job.service';
 import { getCompanySizeString } from 'src/app/common/utils/companySizeUtils';
+import { getIndustryString } from 'src/app/common/utils/jobIndustryUtils';
 
 @Component({
   selector: 'app-job-detail-header',
@@ -21,5 +22,10 @@ export class JobDetailHeaderComponent {
 
   getCompanySize() {
     return getCompanySizeString(this.job?.companySize);
+  }
+
+  getJobIndustry() {
+    if (!this.job) return;
+    return getIndustryString(this.job.industry);
   }
 }

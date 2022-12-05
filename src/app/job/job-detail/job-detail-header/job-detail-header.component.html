@@ -2,7 +2,7 @@
     <div class="job-title">{{ job.publicTitle }}</div>
     <div class="company-summary-apply-button-container">
         <div class="company-summary">
-            <app-icon-label [text]="'Industry: ' + job.industry" classIcon="icon-business"></app-icon-label>
+            <app-icon-label [text]="'Industry: ' + getJobIndustry()" classIcon="icon-business"></app-icon-label>
             <app-icon-label text="Remote" classIcon="icon-place"></app-icon-label>
             <app-icon-label [text]="'Company size: ' + getCompanySize()" classIcon="icon-group"></app-icon-label>
             <app-icon-label text="Full-time" classIcon="icon-calendar"></app-icon-label>
