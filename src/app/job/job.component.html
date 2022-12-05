@@ -1,4 +1,68 @@
-<app-job-list class="app-job-list" [jobList]="jobList" [selectedJobId]="getSelectedJobId()" (select)="onSelect($event)"
-    (scroll)="onScroll($event)">
+<app-job-list *ngIf="!isLoading()" class="app-job-list" [jobList]="jobList" [selectedJobId]="getSelectedJobId()"
+    (select)="onSelect($event)" (scroll)="onScroll($event)">
 </app-job-list>
-<app-job-detail class="app-job-detail" [job]="getSelectedJob()"></app-job-detail>
+<app-job-detail *ngIf="!isLoading()" class="app-job-detail" [job]="getSelectedJob()"></app-job-detail>
+
+<div *ngIf="isLoading()" class="app-job-list">
+    <svg height="1340" width="100%">
+        <title>Loading...</title>
+        <rect x="0" y="0" width="100%" height="100%" clip-path="url(#live-job-card-list-diff)"
+            style="fill: url(&quot;#live-job-card-list-animated-diff&quot;);"></rect>
+        <defs>
+            <clipPath id="live-job-card-list-diff">
+                <rect x="0" y="0" rx="0" ry="0" width="360" height="148"></rect>
+                <rect x="0" y="150" rx="0" ry="0" width="360" height="148"></rect>
+                <rect x="0" y="300" rx="0" ry="0" width="360" height="148"></rect>
+                <rect x="0" y="450" rx="0" ry="0" width="360" height="148"></rect>
+                <rect x="0" y="600" rx="0" ry="0" width="360" height="148"></rect>
+                <rect x="0" y="750" rx="0" ry="0" width="360" height="148"></rect>
+                <rect x="0" y="900" rx="0" ry="0" width="360" height="148"></rect>
+                <rect x="0" y="1050" rx="0" ry="0" width="360" height="148"></rect>
+                <rect x="0" y="1200" rx="0" ry="0" width="360" height="148"></rect>
+                <rect x="0" y="0" rx="0" ry="0" width="838" height="235"></rect>
+                <rect x="0" y="236" rx="0" ry="0" width="838" height="1169"></rect>
+            </clipPath>
+            <linearGradient id="live-job-card-list-animated-diff">
+                <stop offset="0%" stop-color="#f5f6f7" stop-opacity="1">
+                    <animate attributeName="offset" values="-2; -2; 1" keyTimes="0; 0.25; 1" dur="1.2s"
+                        repeatCount="indefinite"></animate>
+                </stop>
+                <stop offset="50%" stop-color="#eee" stop-opacity="1">
+                    <animate attributeName="offset" values="-1; -1; 2" keyTimes="0; 0.25; 1" dur="1.2s"
+                        repeatCount="indefinite"></animate>
+                </stop>
+                <stop offset="100%" stop-color="#f5f6f7" stop-opacity="1">
+                    <animate attributeName="offset" values="0; 0; 3" keyTimes="0; 0.25; 1" dur="1.2s"
+                        repeatCount="indefinite"></animate>
+                </stop>
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
+<div *ngIf="isLoading()" class="app-job-detail">
+    <svg height="1340" width="100%">
+        <title>Loading...</title>
+        <rect x="0" y="0" width="100%" height="100%" clip-path="url(#live-job-detail-diff)"
+            style="fill: url(&quot;#live-job-detail-animated-diff&quot;);"></rect>
+        <defs>
+            <clipPath id="live-job-detail-diff">
+                <rect x="0" y="0" rx="0" ry="0" width="838" height="235"></rect>
+                <rect x="0" y="236" rx="0" ry="0" width="838" height="1169"></rect>
+            </clipPath>
+            <linearGradient id="live-job-detail-animated-diff">
+                <stop offset="0%" stop-color="#f5f6f7" stop-opacity="1">
+                    <animate attributeName="offset" values="-2; -2; 1" keyTimes="0; 0.25; 1" dur="1.2s"
+                        repeatCount="indefinite"></animate>
+                </stop>
+                <stop offset="50%" stop-color="#eee" stop-opacity="1">
+                    <animate attributeName="offset" values="-1; -1; 2" keyTimes="0; 0.25; 1" dur="1.2s"
+                        repeatCount="indefinite"></animate>
+                </stop>
+                <stop offset="100%" stop-color="#f5f6f7" stop-opacity="1">
+                    <animate attributeName="offset" values="0; 0; 3" keyTimes="0; 0.25; 1" dur="1.2s"
+                        repeatCount="indefinite"></animate>
+                </stop>
+            </linearGradient>
+        </defs>
+    </svg>
+</div>

@@ -45,4 +45,8 @@ export class JobComponent implements OnInit {
   getSelectedJobId() {
     return this.jobService.getSelectedJobId();
   }
+
+  isLoading() {
+    return this.jobService.getIsFetching();
+  }
 }
