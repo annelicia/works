@@ -19,6 +19,7 @@ import { JobDetailFooterComponent } from './job/job-detail/job-detail-footer/job
 import { JobDetailHeaderComponent } from './job/job-detail/job-detail-header/job-detail-header.component';
 import { MobileFooterComponent } from './mobile-footer/mobile-footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SafeHtmlPipe } from './common/pipes/safehtml';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     StepComponent,
     JobDetailDescriptionComponent,
     MobileFooterComponent,
+    SafeHtmlPipe,
   ],
   imports: [
     BrowserModule,
