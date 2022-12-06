@@ -1,6 +1,6 @@
 <div class="job-list-container" (scroll)="onScroll($event)">
     <div class="job-item-outer">
-        <div class="job-container-job-item" *ngFor="let job of jobList">
+        <div class="job-container-job-item" *ngFor="let job of getJobList()">
             <app-job-item class="job-item" [job]="job" [selected]="job.jobId === selectedJobId"
                 (select)="select.emit(job.jobId)">
             </app-job-item>
