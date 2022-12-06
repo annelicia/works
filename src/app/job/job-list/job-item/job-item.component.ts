@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { getCompanySizeString } from 'src/app/common/utils/companySizeUtils';
-import { toDaysSinceToday } from 'src/app/common/utils/dateUtils';
+import { DaysSinceTodayType, toDaysSinceToday } from 'src/app/common/utils/dateUtils';
 import { getIndustryString } from 'src/app/common/utils/jobIndustryUtils';
 import { Job } from '../../../common/services/job/job.service';
 
@@ -27,10 +27,16 @@ export class JobItemComponent {
   }
 
   getPublishedDateString() {
-    return toDaysSinceToday(this.job.publishedOnJobBoard);
+    return toDaysSinceToday(this.job.publishedOnJobBoard, DaysSinceTodayType.JOB_ITEM);
   }
 
   getJobIndustry() {
     return getIndustryString(this.job.industry);
   }
+
+  // getJobUrl() {
+  //   let words = this.job.publicTitle.toLocaleLowerCase().split(' ');
+  //   words.push(this.job.jobId);
+  //   return words.join('-');
+  // }
 }
