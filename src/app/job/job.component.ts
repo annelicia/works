@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { JOB_IDS_FILTERED } from '../common/constants/jobIds';
 import { Job, JobService } from '../common/services/job/job.service';
@@ -9,7 +10,7 @@ import { Job, JobService } from '../common/services/job/job.service';
 })
 export class JobComponent implements OnInit {
   jobList: Job[] = [];
-  constructor(private jobService: JobService) { }
+  constructor(private jobService: JobService, private viewportScroller: ViewportScroller) { }
 
   ngOnInit() {
     this.jobService.jobList$.subscribe(jobList => {
@@ -20,6 +21,7 @@ export class JobComponent implements OnInit {
 
   onSelect(jobId: string) {
     this.jobService.selectJobId(jobId);
+    this.viewportScroller.scrollToPosition([0, 176]);
   }
 
   getSelectedJob() {
