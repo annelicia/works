@@ -1,5 +1,4 @@
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 
 @Component({
@@ -10,23 +9,22 @@ import { Meta } from '@angular/platform-browser';
 export class AppComponent {
   title = 'works-app';
 
-  constructor(private breakpointObserver: BreakpointObserver, private metaService: Meta) {
-    this.breakpointObserver.observe(["(max-width: 360px)"]).subscribe((result: BreakpointState) => {
-      if (result.matches) {
-        this.metaService.updateTag({
-          name: 'viewport',
-          content: 'width=360',
-        }, 'name=viewport');
-      }
-    });
+  constructor(private metaService: Meta) {
+    this.onResize();
+  }
 
-    this.breakpointObserver.observe(["(min-width: 361px)"]).subscribe((result: BreakpointState) => {
-      if (result.matches) {
-        this.metaService.updateTag({
-          name: 'viewport',
-          content: 'width=device-width,initial-scale=1',
-        }, 'name=viewport');
-      }
-    });
+  @HostListener('window:resize')
+  onResize() {
+    if (window.outerWidth <= 360) {
+      this.metaService.updateTag({
+        name: 'viewport',
+        content: 'width=360',
+      }, 'name=viewport');
+    } else if (window.outerWidth > 360) {
+      this.metaService.updateTag({
+        name: 'viewport',
+        content: 'width=device-width,initial-scale=1',
+      }, 'name=viewport');
+    }
   }
 }

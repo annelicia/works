@@ -18,6 +18,12 @@ $button-bg-color-hover: #2961c4;
     line-height: 1;
 }
 
+@media(max-width: 374px) {
+    .apply-button {
+        font-size: 14px;
+    }
+}
+
 .apply-button:hover {
     background-color: $button-bg-color-hover;
 }

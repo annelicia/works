@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { Job, JobService } from '../../common/services/job/job.service';
 
 @Component({
@@ -17,14 +16,17 @@ export class JobListComponent {
 
   private isMobileView: boolean = false;
 
-  constructor(private jobService: JobService, private breakpointObserver: BreakpointObserver) {
-    this.breakpointObserver.observe(["(max-width: 1024px)"]).subscribe((result: BreakpointState) => {
-      if (result.matches) {
-        this.isMobileView = true;
-      } else {
-        this.isMobileView = false;
-      }
-    });
+  constructor(private jobService: JobService) {
+    this.onResize();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (window.outerWidth <= 1024) {
+      this.isMobileView = true;
+    } else if (window.outerWidth > 1024) {
+      this.isMobileView = false;
+    }
   }
 
   onScroll(event: any) {
