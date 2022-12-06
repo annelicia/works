@@ -20,7 +20,6 @@ import { JobDetailHeaderComponent } from './job/job-detail/job-detail-header/job
 import { MobileFooterComponent } from './mobile-footer/mobile-footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SafeHtmlPipe } from './common/pipes/safehtml';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -46,10 +45,6 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot([{ path: '', component: AppComponent }], {
-      useHash: true,
-      anchorScrolling: 'enabled',
-    })
   ],
   providers: [],
   bootstrap: [AppComponent]
