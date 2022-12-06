@@ -2,7 +2,7 @@
     <div class="job-item-outer">
         <div class="job-container-job-item" *ngFor="let job of getJobList()">
             <app-job-item class="job-item" [job]="job" [selected]="job.jobId === selectedJobId"
-                (select)="select.emit(job.jobId)">
+                (select)="onSelect(job)">
             </app-job-item>
         </div>
         <svg class="svg-loading" width="100%" *ngFor="let index of [1, 2, 3, 4]">

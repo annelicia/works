@@ -9,7 +9,6 @@
     font-size: 1.8rem;
 }
 
-// TODO: Yg gak kepake dibawah ini dihapus.
 [class*=" icon-"],
 [class^=icon-] {
     font-family: icomoon !important;
@@ -44,39 +43,6 @@
     color: #666
 }
 
-.icon-heart:before {
-    content: "";
-    color: #f86567
-}
-
-.icon-whatsup:before {
-    content: "";
-    color: #25d366
-}
-
-.icon-linkedin:before {
-    content: "";
-    color: #007ab9
-}
-
-.icon-twitter:before {
-    content: "";
-    color: #55acee
-}
-
-.icon-facebook:before {
-    content: "";
-    color: #45619d
-}
-
-.icon-play:before {
-    content: ""
-}
-
-.icon-chevron-down:before {
-    content: ""
-}
-
 .icon-brief:before {
     content: ""
 }
@@ -87,16 +53,4 @@
 
 .icon-chevron-right:before {
     content: ""
-}
-
-.icon-chevron-left:before {
-    content: ""
-}
-
-.icon-star-full:before {
-    content: ""
-}
-
-.icon-close:before {
-    content: ""
 }

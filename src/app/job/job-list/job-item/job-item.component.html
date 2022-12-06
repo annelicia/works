@@ -1,4 +1,3 @@
-<!-- <a class="anchor-job-item" [href]="'https://www.turing.com/remote-developer-jobs/j/' + getJobUrl()"></a> -->
 <div *ngIf="job" [class]="getContainerClassName()" (click)="select.emit()" aria-label="job-item-container">
     <div class="job-item-role">{{ job.publicTitle }}</div>
     <div class="job-item-company-summary">

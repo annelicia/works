@@ -33,10 +33,4 @@ export class JobItemComponent {
   getJobIndustry() {
     return getIndustryString(this.job.industry);
   }
-
-  // getJobUrl() {
-  //   let words = this.job.publicTitle.toLocaleLowerCase().split(' ');
-  //   words.push(this.job.jobId);
-  //   return words.join('-');
-  // }
 }
