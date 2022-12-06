@@ -101,9 +101,8 @@ export class JobService {
     }
     this.subscription = this.getJobList().subscribe(jobListNew => {
       jobListNew = jobListNew.filter(eachJob => JOB_IDS_FILTERED.has(eachJob.jobId));
-      if (this.jobList.getValue().length === 0) {
-        this.selectJobId(jobListNew[0].jobId);
-      }
+      if (this.jobList.getValue().length === 0) this.selectJobId(jobListNew[0].jobId);
+
       this.jobList.next([...this.jobList.getValue(), ...jobListNew]);
       this.isFetching = false;
       this.offsetFetch = this.offsetFetch + 30;
@@ -150,7 +149,11 @@ export class JobService {
       }, [])
       .join('%2C');
     if (skillIdsUrl === '') {
-      return "https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&limit=30&locale=en";
+      if (this.jobList.getValue().length === 0) {
+        return "https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&limit=30&locale=en";
+      } else {
+        return `https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&limit=30&offset=${offset}&locale=en`;
+      }
     }
     return `https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&skillIds=${skillIdsUrl}&limit=30&offset=${offset}&locale=en`;
   }
