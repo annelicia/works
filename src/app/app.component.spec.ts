@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
 import { ApplyButtonComponent } from './common/components/apply-button/apply-button.component';
 import { ChipItemComponent } from './common/components/chip-item/chip-item.component';
 import { ChipSelectorComponent } from './common/components/chip-selector/chip-selector.component';
-import { JobService } from './common/services/job/job.service';
 import { FakeJobServiceModuleBuilder } from './common/services/job/job.service.fake';
 import { JobDetailDescriptionComponent } from './job/job-detail/job-detail-description/job-detail-description.component';
 import { JobDetailFooterComponent } from './job/job-detail/job-detail-footer/job-detail-footer.component';

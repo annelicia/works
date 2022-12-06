@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { StepsBecomeDeveloper, STEPS_BECOME_DEVELOPER } from 'src/app/common/constants/stepsBecomeDeveloper';
 
 @Component({

@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { TagComponent } from 'src/app/common/components/tag/tag.component';
 import { JOB_1, JOB_2, JOB_3, JOB_4 } from 'src/app/common/constants/job';
 import { IconLabelComponent } from '../../../common/components/icon-label/icon-label.component';
-
 import { JobItemComponent } from './job-item.component';
 
 describe('JobItemComponent', () => {

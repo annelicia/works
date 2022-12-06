@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { getCompanySizeString } from 'src/app/common/utils/companySizeUtils';
 import { DaysSinceTodayType, toDaysSinceToday } from 'src/app/common/utils/dateUtils';
 import { getIndustryString } from 'src/app/common/utils/jobIndustryUtils';

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { JobService } from '../common/services/job/job.service';
 
 @Component({

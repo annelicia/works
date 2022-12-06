@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ChipItemComponent } from '../chip-item/chip-item.component';
 
+import { ChipItemComponent } from '../chip-item/chip-item.component';
 import { ChipSelectorComponent } from './chip-selector.component';
 
 describe('ChipSelectorComponent', () => {

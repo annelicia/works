@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { NEVER, of } from 'rxjs';
-import { JOB_1, JOB_2 } from '../../constants/job';
 
+import { JOB_1, JOB_2 } from '../../constants/job';
 import { Job, JobService } from './job.service';
 
 describe('JobService', () => {

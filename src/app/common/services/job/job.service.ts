@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+
 import { Skill, SKILLS, SKILLS_MAP } from '../../constants/skills';
 import { JOB_IDS_FILTERED } from '../../constants/jobIds';
 

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+
 import { DaysSinceTodayType, toDaysSinceToday } from 'src/app/common/utils/dateUtils';
 import { Job } from 'src/app/common/services/job/job.service';
 import { getCompanySizeString } from 'src/app/common/utils/companySizeUtils';

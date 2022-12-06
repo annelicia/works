@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
 import { JobDetail, JobService } from 'src/app/common/services/job/job.service';
 
 @Component({

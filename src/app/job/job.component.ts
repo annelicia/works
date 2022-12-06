@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { JOB_IDS_FILTERED } from '../common/constants/jobIds';
+
 import { Job, JobService } from '../common/services/job/job.service';
 
 @Component({

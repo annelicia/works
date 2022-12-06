@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ChipItemComponent } from './common/components/chip-item/chip-item.component';
 import { ChipSelectorComponent } from './common/components/chip-selector/chip-selector.component';
 import { TechnologySelectorComponent } from './technology-selector/technology-selector.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JobComponent } from './job/job.component';
 import { JobListComponent } from './job/job-list/job-list.component';
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
@@ -18,7 +19,6 @@ import { JobDetailDescriptionComponent } from './job/job-detail/job-detail-descr
 import { JobDetailFooterComponent } from './job/job-detail/job-detail-footer/job-detail-footer.component';
 import { JobDetailHeaderComponent } from './job/job-detail/job-detail-header/job-detail-header.component';
 import { MobileFooterComponent } from './mobile-footer/mobile-footer.component';
-import { HttpClientModule } from '@angular/common/http';
 import { SafeHtmlPipe } from './common/pipes/safehtml';
 
 @NgModule({

@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { ApplyButtonComponent } from 'src/app/common/components/apply-button/apply-button.component';
 import { IconLabelComponent } from 'src/app/common/components/icon-label/icon-label.component';
 import { TagComponent } from 'src/app/common/components/tag/tag.component';
 import { JOB_2 } from 'src/app/common/constants/job';
-
 import { JobDetailHeaderComponent } from './job-detail-header.component';
 
 describe('JobDetailHeaderComponent', () => {

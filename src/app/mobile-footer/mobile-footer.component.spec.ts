@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { ApplyButtonComponent } from '../common/components/apply-button/apply-button.component';
 import { FakeJobServiceModuleBuilder } from '../common/services/job/job.service.fake';
-
 import { MobileFooterComponent } from './mobile-footer.component';
 
 describe('MobileFooterComponent', () => {

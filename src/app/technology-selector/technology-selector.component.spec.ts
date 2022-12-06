@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { ChipItemComponent } from '../common/components/chip-item/chip-item.component';
 import { ChipSelectorComponent } from '../common/components/chip-selector/chip-selector.component';
 import { FakeJobServiceModuleBuilder } from '../common/services/job/job.service.fake';
-
 import { TechnologySelectorComponent } from './technology-selector.component';
 
 describe('TechnologySelectorComponent', () => {
