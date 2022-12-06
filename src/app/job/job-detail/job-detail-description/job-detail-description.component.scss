@@ -101,17 +101,9 @@ $maxContentHeight: 430px;
 
 }
 
-@media(min-width: 769px) {
-    .loading-description-outer {
-        padding-top: 12rem;
-        padding: 5.6rem 0;
-    }
-}
-
 @media(min-width: 1025px) {
     .loading-description-outer {
         padding-top: 16rem;
-        padding: 8rem 0;
     }
 }
 
