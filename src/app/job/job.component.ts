@@ -20,7 +20,6 @@ export class JobComponent implements OnInit {
   }
 
   onSelect(event: CustomEvent<string>) {
-    console.log(event);
     this.jobService.selectJobId(event.detail);
     this.viewportScroller.scrollToPosition([0, 176]);
   }
