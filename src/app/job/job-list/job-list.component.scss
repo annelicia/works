@@ -4,18 +4,24 @@
 }
 
 .job-item-container {
+    position: relative;
+    background-color: #fff;
     border-bottom: 1px solid #f3f3f3;
 }
 
-.job-list-container {
-    max-height: 1340px;
-    overflow-y: scroll;
+.job-item-container:last-child {
+    border-bottom: 0px;
 }
 
-@media(max-width: 1024px) {
+.job-list-container {
+    overflow: initial;
+    max-height: none;
+}
+
+@media(min-width: 1024px) {
     .job-list-container {
-        overflow: initial;
-        max-height: none;
+        max-height: 1304px;
+        overflow-y: scroll;
     }
 }
 
