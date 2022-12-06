@@ -53,7 +53,7 @@ export class JobListComponent {
     if (this.isMobileView) {
       window.location.href = this.getJobUrl(job);
     } else {
-      this.select.emit(job.jobId);
+      this.select.emit({ detail: job.jobId });
     }
   }
 }

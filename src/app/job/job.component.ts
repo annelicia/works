@@ -19,8 +19,9 @@ export class JobComponent implements OnInit {
     this.jobService.fetchJobList();
   }
 
-  onSelect(jobId: string) {
-    this.jobService.selectJobId(jobId);
+  onSelect(event: CustomEvent<string>) {
+    console.log(event);
+    this.jobService.selectJobId(event.detail);
     this.viewportScroller.scrollToPosition([0, 176]);
   }
 

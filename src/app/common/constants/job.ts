@@ -1,7 +1,7 @@
 import { Job } from "../services/job/job.service"
 
 export const JOB_1: Job = {
-    "jobId": "98559",
+    "jobId": "98217",
     "createdDate": "2022-12-01T20:20:05.000Z",
     "updatedDate": "2022-12-02T18:55:19.000Z",
     "industry": "UNKNOWN",
@@ -47,7 +47,7 @@ export const JOB_1: Job = {
 }
 
 export const JOB_2: Job = {
-    "jobId": "98514",
+    "jobId": "97605",
     "createdDate": "2022-12-01T16:17:16.000Z",
     "updatedDate": "2022-12-02T18:40:32.000Z",
     "industry": "Edtech",

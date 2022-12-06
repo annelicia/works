@@ -19,7 +19,7 @@ describe('JobService', () => {
     service = TestBed.inject(JobService);
   });
 
-  it('should return expected job list.', (done: DoneFn) => {
+  it('should return expected job list and call correct url job list and job detail for first time fetch.', (done: DoneFn) => {
     // Arrange.
     const expectedJobList: Job[] = [JOB_1, JOB_2];
     httpClientSpy.get.and.returnValue(of(expectedJobList));
@@ -36,7 +36,23 @@ describe('JobService', () => {
     });
 
     // Assert.
-    expect(httpClientSpy.get).toHaveBeenCalledTimes(1);
+    expect(httpClientSpy.get).toHaveBeenCalledWith('https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&limit=30&locale=en');
+    expect(httpClientSpy.get).toHaveBeenCalledWith(`https://works-api.vercel.app/api/getJobDetail?id=${JOB_1.jobId}`);
+  });
+
+  it('should call job list url only when is not first time fetch.', () => {
+    // Arrange.
+    const expectedJobList: Job[] = [JOB_1, JOB_2];
+    httpClientSpy.get.and.returnValue(of(expectedJobList));
+    service.fetchJobList();
+    expect(httpClientSpy.get).toHaveBeenCalledTimes(2);
+
+    // Act.
+    service.fetchJobList();
+
+    // Assert.
+    expect(httpClientSpy.get).toHaveBeenCalledWith('https://works-api.vercel.app/api/getJobList?sortBy=publishedOnJobBoard%2Cdesc&limit=30&offset=30&locale=en');
+    expect(httpClientSpy.get).toHaveBeenCalledTimes(3);
   });
 
   it('should call http once if the isLoading is true.', () => {
