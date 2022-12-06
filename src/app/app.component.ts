@@ -17,7 +17,11 @@ export class AppComponent {
           name: 'viewport',
           content: 'width=360',
         }, 'name=viewport');
-      } else {
+      }
+    });
+
+    this.breakpointObserver.observe(["(min-width: 361px)"]).subscribe((result: BreakpointState) => {
+      if (result.matches) {
         this.metaService.updateTag({
           name: 'viewport',
           content: 'width=device-width,initial-scale=1',

@@ -12,6 +12,12 @@
     margin-bottom: 10px;
 }
 
+@media(max-width: 767px) {
+    .blue-title {
+        font-size: 18px;
+    }
+}
+
 .foot-detail {
     font-size: 1.4rem;
     color: #444;
