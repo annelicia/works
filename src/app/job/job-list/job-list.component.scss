@@ -3,13 +3,13 @@
     font-size: 1.2rem;
 }
 
-.job-item-container {
+.job-container-job-item {
     position: relative;
     background-color: #fff;
     border-bottom: 1px solid #f3f3f3;
 }
 
-.job-item-container:last-child {
+.job-container-job-item:last-of-type {
     border-bottom: 0px;
 }
 
@@ -20,7 +20,7 @@
 
 @media(min-width: 1024px) {
     .job-list-container {
-        max-height: 1304px;
+        max-height: 1340px;
         overflow-y: scroll;
     }
 }
