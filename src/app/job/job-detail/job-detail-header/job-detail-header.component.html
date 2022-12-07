@@ -15,7 +15,7 @@
             <app-apply-button></app-apply-button>
         </div>
     </div>
-    <div class="tag-container">
+    <div *ngIf="tags.length !== 0" class="tag-container">
         <app-tag *ngFor="let tag of tags" [text]="tag"></app-tag>
     </div>
     <div class="time-posted" *ngIf="getPublishedDateString() !== ''">{{ 'Posted ' + getPublishedDateString()}}</div>

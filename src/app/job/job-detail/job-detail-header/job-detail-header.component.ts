@@ -14,7 +14,8 @@ export class JobDetailHeaderComponent {
   @Input() job!: Job | null;
 
   get tags() {
-    return this.job?.requiredSkills.concat(this.job.optionalSkills).map(({ name }) => name);
+    if (!this.job) return [];
+    return this.job.requiredSkills.concat(this.job.optionalSkills).map(({ name }) => name);
   }
 
   getPublishedDateString() {

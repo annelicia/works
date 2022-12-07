@@ -6,7 +6,7 @@
         </app-icon-label>
         <div class="job-item-company-summary-days">{{ getPublishedDateString() }}</div>
     </div>
-    <div class="job-item-tag">
+    <div *ngIf="tags.length !== 0" class="job-item-tag">
         <div class="tag-item-container">
             <app-tag *ngFor="let tag of tags" [text]="tag"></app-tag>
         </div>
